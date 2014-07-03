@@ -23,7 +23,7 @@ This is where you document how your team will work.  Spend time up front decidin
 
 ## Product Management Tools
   * Suggestions:
-    * Trello
+    * [Trello Board for Jury](https://trello.com/b/OX3lk6Tg)
     * [Travis CI](travis-ci.md) - required
 
 ## Project Learning Goals
