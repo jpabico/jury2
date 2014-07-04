@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '3.2.18'
 
@@ -25,7 +26,6 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'unicorn'
 
 gem 'debugger'
 
@@ -41,6 +41,12 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
 end
+
+group :production do
+	gem 'unicorn'
+	gem 'rails_12factor'
+end
+
 
 # Deploy with Capistrano
 # gem 'capistrano'
