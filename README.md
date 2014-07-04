@@ -5,9 +5,12 @@ Jon P, Aki S, Butler B, Adam R, Kevin K
 
 ##Description of Project
 ======================
-A web app that allows users to create cases in conjuction with another user. These initial users can also create their "side" of the case, which is the presented to all users to be voted on, commented on, and ultimately judged on. Arguments can be a combination of text, video or pictures, and cases can be given a set window to remain open.
+Jury is a  web app that allows users to submit disputes or conflicts to the court of public opinion for resolution. A user can provide written arguments, videos, or photos in support of his/her argument. Other parties to the case will be invited to submit their statements in support of their arguments. Once a case is submitted for judgement, it will be open for comments and votes by other users of the site.  The case will remain open for judgement for a specified duration. At the end of this duration, the votes will be tallied and the verdict presented to the complainant(s) and community.
 
-We will use rails to create our site and manage our database, but rely heavily on JavaScript and JS templates for our look. Our user log in will be handled with the Clearance Gem. We will either use the YouTube or Vimeo API for handling our video arguments.
+Visitors to the site will be able to view open and closed cases, including all the supporting documents and comments/votes by the jury. Visitors will not be able to submit cases for judgement or to vote on open cases. 
+
+
+We will use Rails to create our site and manage our database, but rely heavily on JavaScript and JS templates for our look. Our user log in will be handled with the Clearance Gem. We will either use the YouTube or Vimeo API for handling our video arguments.
 
 Finally we are using Trello to handle our user stories and will be using RSPEC and JASMINE for our test coverage.
 
