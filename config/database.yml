@@ -1,0 +1,17 @@
+#database.yml sample
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: i_jury_development
+
+test:
+  <<: *default
+  database: i_jury_test
+
+production:
+  <<: *default
+  database: i_jury_production
