@@ -1,0 +1,10 @@
+# bundler local configs
+/.bundle
+/vendor/ruby
+
+# minimal Rails specific artifacts
+/log/*
+/tmp/*
+
+# various artifacts
+/config/database.yml
