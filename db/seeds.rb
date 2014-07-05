@@ -14,3 +14,5 @@ Case.create(title: "You are not a supermodel", summary: "Pabico thinks he's so s
 CasesUser.create(case_id: 2, user_id: 4, party: "plaintiff")
 CasesUser.create(case_id: 2, user_id: 3, party: "defendant")
 
+Evidence.create(argument: "MJ is awesome", video_url: "http://test.com", cases_user_id: 1)
+Evidence.create(argument: "MJ is not awesome", video_url: "http://test.com", cases_user_id: 2)

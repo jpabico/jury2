@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(:version => 20140705001208) do
   end
 
   create_table "comments", :force => true do |t|
-    t.integer  "users_cases_id"
     t.text     "content"
     t.integer  "parent_comment_id"
+    t.integer  "user_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

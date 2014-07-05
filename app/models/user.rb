@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :cases_users
   has_many :cases, through: :cases_users
 
+  has_many :comments
+
   # users.password_hash in the database is a :string
 
   include BCrypt
