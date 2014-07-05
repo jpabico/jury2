@@ -11,7 +11,7 @@ describe UsersController do
       end
       it "redirects to the home page" do
         post :create, user: FactoryGirl.attributes_for(:user)
-        expect(response).to redirect_to test_url
+        expect(response).to redirect_to dashboard_path
       end
     end
   end
