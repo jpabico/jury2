@@ -1,6 +1,6 @@
-class CreateUsersCases < ActiveRecord::Migration
+class CreateCasesUsers < ActiveRecord::Migration
   def change
-    create_table :users_cases do |t|
+    create_table :cases_users do |t|
       t.belongs_to :user
       t.belongs_to :case
 

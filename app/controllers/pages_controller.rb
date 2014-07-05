@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @mycases = Case.all
 
   end
 

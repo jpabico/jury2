@@ -4,7 +4,7 @@ class CreateEvidences < ActiveRecord::Migration
       t.text :argument
       t.string :mediatype
       t.string :party
-      t.belongs_to :users_cases
+      t.belongs_to :cases_user
       t.timestamps
     end
   end
