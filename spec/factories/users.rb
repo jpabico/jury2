@@ -2,5 +2,8 @@
 
 FactoryGirl.define do
   factory :user do
+    user_name "user_name"
+    email "test@test.com"
+    password_hash "test"
   end
 end
