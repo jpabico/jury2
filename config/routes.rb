@@ -1,5 +1,6 @@
 IJURY::Application.routes.draw do
 
+<<<<<<< HEAD
   root to: 'pages#main'
 
   resources :users
@@ -12,4 +13,7 @@ IJURY::Application.routes.draw do
     end
   end
 
+=======
+
+>>>>>>> 9b843ee346dcbc3c38edea4130de573b7b3b1b6d
 end

@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20140705001208) do
 
   create_table "users", :force => true do |t|
@@ -19,6 +20,52 @@ ActiveRecord::Schema.define(:version => 20140705001208) do
     t.string   "password_hash"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+=======
+ActiveRecord::Schema.define(:version => 20140704214716) do
+
+  create_table "cases", :force => true do |t|
+    t.string   "title"
+    t.integer  "user_1_vote_count", :default => 0
+    t.integer  "user_2_vote_count", :default => 0
+    t.string   "status"
+    t.string   "winner"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "users_cases_id"
+    t.text     "content"
+    t.integer  "parent_comment_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "evidences", :force => true do |t|
+    t.text     "argument"
+    t.string   "mediatype"
+    t.string   "party"
+    t.integer  "users_cases_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "users_cases", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "case_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "votes", :force => true do |t|
+    t.string   "direction"
+    t.integer  "comment_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+>>>>>>> 9b843ee346dcbc3c38edea4130de573b7b3b1b6d
   end
 
 end
