@@ -1,4 +1,3 @@
-# Create all test users
 User.create(user_name: "akimeister", email: "aki@test.com", password: "123")
 User.create(user_name: "donkeykang", email: "kevin@test.com", password: "123")
 User.create(user_name: "jonpabico", email: "jon@test.com", password: "123")
