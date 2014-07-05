@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20140705001208) do
 
-  create_table "users", :force => true do |t|
-    t.string   "user_name"
-    t.string   "email"
-    t.string   "password_hash"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-ActiveRecord::Schema.define(:version => 20140704214716) do
-
   create_table "cases", :force => true do |t|
     t.string   "title"
     t.integer  "user_1_vote_count", :default => 0
@@ -48,8 +40,13 @@ ActiveRecord::Schema.define(:version => 20140704214716) do
     t.datetime "updated_at",     :null => false
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+  create_table "users", :force => true do |t|
+    t.string   "user_name"
+    t.string   "email"
+    t.string   "password_hash"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "users_cases", :force => true do |t|
     t.integer  "user_id"
