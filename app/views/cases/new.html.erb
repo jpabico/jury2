@@ -2,9 +2,9 @@
 
 <h1>Create a New Case</h1>
 <%= form_tag cases_path do %>
-  <%= label_tag :title %>
+  <%= label_tag "Title" %>
   <%= text_field_tag :title %>
-  <%= label_tag :summary %>
+  <%= label_tag "Summary" %>
   <%= text_field_tag :summary %>
   <%= label_tag "Defendant" %>
   <%= text_field_tag :defendant_user_name %>
