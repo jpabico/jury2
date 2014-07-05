@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'bcrypt'
 
 class User < ActiveRecord::Base
@@ -16,6 +15,4 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 end
-=======
 
->>>>>>> 9b843ee346dcbc3c38edea4130de573b7b3b1b6d

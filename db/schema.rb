@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20140705001208) do
 
   create_table "users", :force => true do |t|
@@ -20,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20140705001208) do
     t.string   "password_hash"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-=======
 ActiveRecord::Schema.define(:version => 20140704214716) do
 
   create_table "cases", :force => true do |t|
@@ -65,7 +63,6 @@ ActiveRecord::Schema.define(:version => 20140704214716) do
     t.integer  "comment_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
->>>>>>> 9b843ee346dcbc3c38edea4130de573b7b3b1b6d
   end
 
 end
