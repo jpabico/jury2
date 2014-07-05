@@ -4,8 +4,8 @@ class CreateCases < ActiveRecord::Migration
       t.string :title
       t.integer :user_1_vote_count, default: 0
       t.integer :user_2_vote_count, default: 0
-      t.string :status
-      t.string :winner
+      t.string :status, default: "inactive"
+      t.string :winner, default: nil
 
       t.timestamps
     end

@@ -1,1 +1,14 @@
-<h1>here is where form will be bitches</h1>
+<%= render partial: "pages/ijuryheader" %>
+
+<h1>Create a New Case</h1>
+<%= form_for @case do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+
+  <%= f.submit %>
+<% end %>
+
+
+
+<%= render partial: "pages/ijuryfooter" %>

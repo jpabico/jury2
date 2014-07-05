@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @mycases = User.find(session[:id]).cases
 
   end
 

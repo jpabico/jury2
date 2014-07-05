@@ -9,6 +9,6 @@ def create
   session[:id] = @user.id
   redirect_to dashboard_path
 
-end
+  end
 
 end
