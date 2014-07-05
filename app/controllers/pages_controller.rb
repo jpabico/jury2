@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @mycases = Case.all
+    @mycases = User.find(session[:id]).cases
 
   end
 

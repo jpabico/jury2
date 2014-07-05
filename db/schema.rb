@@ -42,9 +42,9 @@ ActiveRecord::Schema.define(:version => 20140705001208) do
     t.text     "argument"
     t.string   "mediatype"
     t.string   "party"
-    t.integer  "users_cases_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "cases_user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|

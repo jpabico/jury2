@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   attr_accessible :email, :user_name
   # linking should be available for both models
-  has_many :users_cases
+  has_many :cases_users
   has_many :cases, through: :cases_users
 
   # users.password_hash in the database is a :string
