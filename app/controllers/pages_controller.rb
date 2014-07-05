@@ -1,12 +1,16 @@
 class PagesController < ApplicationController
 
-def main
-  @user = User.new
-end
+  def main
+    @user = User.new
+  end
 
-def test
+  def test
 
-end
+  end
+
+  def dashboard
+
+  end
 
 end
 

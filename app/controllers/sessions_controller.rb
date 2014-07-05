@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if @user
       if @user.password == params[:password]
           session[:id] = @user.id
-          redirect_to test_path
+          redirect_to dashboard_path
       else
           redirect_to root_path
       end
