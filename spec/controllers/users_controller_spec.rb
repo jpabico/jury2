@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-  describe UsersController do
+describe UsersController do
 
-    describe "POST #create" do
-      context "with valid attributes" do
-        it "saves the new user in the database" do
-          expect{
-            post :create, user: FactoryGirl.attributes_for(:user)
-          }.to change(User, :count).by(1)
-        end
-        it "redirects to the home page" do
+  describe "POST #create" do
+    context "with valid attributes" do
+      it "saves the new user in the database" do
+        expect{
           post :create, user: FactoryGirl.attributes_for(:user)
-          expect(response).to redirect_to test_url
+        }.to change(User, :count).by(1)
+      end
+      it "redirects to the home page" do
+        post :create, user: FactoryGirl.attributes_for(:user)
+        expect(response).to redirect_to test_url
       end
     end
   end
