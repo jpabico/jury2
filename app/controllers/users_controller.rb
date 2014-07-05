@@ -7,7 +7,7 @@ def create
   @user.password=(params['user']['password'])
   @user.save
   session[:id] = @user.id
-  redirect_to test_path
+  redirect_to dashboard_path
 
 end
 
