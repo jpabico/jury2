@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :case do
+    title "A test case title"
+    status "inactive"
   end
 end
