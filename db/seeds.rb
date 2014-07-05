@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(user_name: "akimeister", email: "aki@test.com", password: "123")
+User.create(user_name: "donkeykang", email: "kevin@test.com", password: "123")
+User.create(user_name: "jonpabico", email: "jon@test.com", password: "123")
+User.create(user_name: "bushyhead", email: "butler@test.com", password: "123")
+User.create(user_name: "adam", email: "adam@test.com", password: "123")
+
+# Create test cases
+Case.create(title: "The Kid is Not My Son", summary: "Billie Jean is not my lover.... she took my soul and said that I was the one. But...")
+CasesUser.create(case_id: 1, user_id: 1, party: "plaintiff")
+CasesUser.create(case_id: 1, user_id: 2, party: "defendant")
+
+Case.create(title: "You are not a supermodel", summary: "Pabico thinks he's so sexy, but not so much says I.  Like seriously. ")
+CasesUser.create(case_id: 2, user_id: 4, party: "plaintiff")
+CasesUser.create(case_id: 2, user_id: 3, party: "defendant")
+
+Evidence.create(argument: "MJ is awesome", video_url: "http://test.com", cases_user_id: 1)
+Evidence.create(argument: "MJ is not awesome", video_url: "http://test.com", cases_user_id: 2)
+
+# create comments
+
+Comment.create(content:"hello", user_id:1,case_id:1)

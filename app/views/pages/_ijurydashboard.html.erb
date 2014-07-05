@@ -1,0 +1,32 @@
+<section class="dashboard-alerts">
+<h3>Alerts</h3>
+<ul class="alerts-panel">
+<li><%= "count inactive" %> invites need your attention</li>
+<li><%= "count open" %> cases open</li>
+<li><%= "count closed" %> cases closed</li>
+</ul>
+</section>
+
+
+<section class="cases-create">
+<h3>Create new case</h3>
+<%= link_to "Create a Case", new_case_path %>
+</section>
+
+<section class="cases-mycases">
+<h3>My Cases</h3>
+<% @mycases.each do |mycase| %>
+  <%= mycase.title  %><br />
+<% end  %>
+
+</section>
+
+
+<section class="cases-showactive">
+<h3>Active Cases. Vote to be heard!</h3>
+Case.all.where(case_status: "active")
+</section>
+
+<section class="cases-showclosed">
+<h3>Closed Cases</h3>Case.all.where(case_status: "closed")
+</section>
