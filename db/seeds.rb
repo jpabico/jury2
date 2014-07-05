@@ -15,3 +15,7 @@ CasesUser.create(case_id: 2, user_id: 3, party: "defendant")
 
 Evidence.create(argument: "MJ is awesome", video_url: "http://test.com", cases_user_id: 1)
 Evidence.create(argument: "MJ is not awesome", video_url: "http://test.com", cases_user_id: 2)
+
+# create comments
+
+Comment.create(content:"hello", user_id:1,case_id:1)

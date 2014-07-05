@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20140705001208) do
     t.text     "content"
     t.integer  "parent_comment_id"
     t.integer  "user_id"
+    t.integer  "case_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
