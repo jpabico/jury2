@@ -4,8 +4,5 @@ class Case < ActiveRecord::Base
   has_many :users, through: :cases_users
   has_many :comments
   validates :title, presence: true
-  validates :status, presence: true
-
-
 
 end
