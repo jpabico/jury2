@@ -8,6 +8,7 @@
 		<li>Log In</li>
 		<li>Log Out</li>
 		<li>Sign up</li>
+		<%= button_to "log out", session_path(session[:id]), method: :delete %>
 	</ul>
 
 	<ul class="nav-resources">
