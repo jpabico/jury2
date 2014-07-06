@@ -9,8 +9,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @mycases = User.find(session[:id]).cases
-
+    @my_cases = User.find(session[:id]).cases.where(status: "pending")
+    @active_cases = Case.where(status: "active")
+		@closed_cases = Case.where(status: "closed")
   end
 
 end

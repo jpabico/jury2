@@ -14,19 +14,32 @@
 </section>
 
 <section class="cases-mycases">
+
 <h3>My Cases</h3>
-<% @mycases.each do |mycase| %>
-  <%= mycase.title  %><br />
-<% end  %>
+	<ul>
+	<% @my_cases.each do |my_case| %>
+  	<li><%= my_case.title  %></li>
+	<% end  %>
+	</ul>
 
 </section>
 
 
 <section class="cases-showactive">
 <h3>Active Cases. Vote to be heard!</h3>
-Case.all.where(case_status: "active")
+	<ul>
+	<% @active_cases.each do |active_case| %>
+  	<li><%= active_case.title  %></li>
+	<% end  %>
+	</ul>
 </section>
 
 <section class="cases-showclosed">
-<h3>Closed Cases</h3>Case.all.where(case_status: "closed")
+<h3>Closed Cases</h3>
+	<ul>
+	<% @closed_cases.each do |closed_case| %>
+  	<li><%= closed_case.title  %></li>
+	<% end  %>
+	</ul>
+
 </section>
