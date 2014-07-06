@@ -26,7 +26,7 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
 
-
+gem 'pry'
 gem 'debugger'
 
 group :development, :test do

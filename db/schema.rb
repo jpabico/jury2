@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140705001208) do
+ActiveRecord::Schema.define(:version => 20140706211949) do
+
+  create_table "ballots", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "case_id"
+    t.string   "role"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "cases", :force => true do |t|
     t.string   "title"
