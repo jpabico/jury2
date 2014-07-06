@@ -1,8 +1,6 @@
 <header>
 <%= link_to image_tag "iJurylogo_oneliner.png", {height: 100, action: 'welcome#index', alt: "iJury"} %>
 
-<h3>This is some kind of welcome message when user logs in, like Hello, Jon</h3>
-
 <nav>
 	<ul class="nav-login">
 		<li>Log In</li>
@@ -17,5 +15,7 @@
 	</ul>
 
 </nav>
+
+<h3>Dashboard for <em><%= @target_user[:user_name] %></em></h3>
 
 </header>
