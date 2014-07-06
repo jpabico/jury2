@@ -5,6 +5,7 @@ IJURY::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:destroy, :create]
+  resources :evidences
   get '/test', to: 'pages#test', as: 'test'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :cases do
