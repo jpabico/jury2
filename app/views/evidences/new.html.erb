@@ -1,4 +1,4 @@
-<%= render partial: "pages/ijuryheader" %>
+<%= render partial: "/layouts/ijuryheader" %>
 
 <h1>Submit your story</h1>
 <%= form_tag evidences_path do %>
@@ -14,13 +14,4 @@
 
 
 
-<%= render partial: "pages/ijuryfooter" %>
-
-<!--   create_table "evidences", :force => true do |t|
-    t.text     "argument"
-    t.string   "video_url"
-    t.string   "photo_url"
-    t.integer  "cases_user_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end -->
+<%= render partial: "/layouts/ijuryfooter" %>

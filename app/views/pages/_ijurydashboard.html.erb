@@ -19,6 +19,8 @@
 <%= link_to "Create a Case", new_case_path %>
 </section>
 
+<% if session[:id] %>
+
 <section class="cases-mycases">
 
 <h3>My Cases</h3>
@@ -35,6 +37,7 @@
 	
 </section>
 
+<% end %>
 
 <section class="cases-showactive">
 <h3>All Active Cases</h3>
