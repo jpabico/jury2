@@ -1,22 +1,39 @@
-
-
 <h3>Display of a specific case</h3>
 
 
-<div>CASE TITLE</div>
+<div><%= @case.title %></div>
 <br/>
-<div class="person1">Person 1's stuff goes here
-<div class="video1">Video One</div>
-<div class="argumentText1">Written Argument One</div>
+<div class="person1">PLAINTIFF: <%= @case.users[0].user_name %>
+
+<div class="video1"><iframe width="560" height="315" src="<%= @case.cases_users[0].evidence.video_url %>" frameborder="0" allowfullscreen></iframe></div>
+
+<div class="argumentText1">PLAINTIFF's ARGUMENT: <%= @case.cases_users[0].evidence.argument %></div>
+
 </div>
 
-<div class="person2">Person 2's stuff goes here
-<div class="video2">Video Two</div>
-<div class="argumentText2">Written Argument Two</div>
-</div>
 
-<div class="commentsBox">Comments</div>
+
+
+<div class="person2">DEFENDANT:<%= @case.users[1].user_name %>
+
+<div class="video2"><iframe width="420" height="315" src="<%= @case.cases_users[1].evidence.video_url %>" frameborder="0" allowfullscreen></iframe></div>
+
+<div class="argumentText2">Defendant's ARGUMENT: <%= @case.cases_users[1].evidence.argument %></div>
+
+</div>
+<!--
+<div class="commentsBox">
+<p>Comments</p>
+@case.comments.each do |comment|
+
+<span> User.find(comment.user_id).user_name
+ : comment.content </span><br>
+end -->
+
+
+
+
+
+</div>
 
 <div>FEATURE TBI - SIDE MENU??</div>
-
-

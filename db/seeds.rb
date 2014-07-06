@@ -1,9 +1,9 @@
 puts "Test users seeded ----------->>>"
 User.create(user_name: "akimeister", email: "aki@test.com", password: "123")
 User.create(user_name: "donkeykang", email: "kevin@test.com", password: "123")
-User.create(user_name: "jonpabico", email: "jon@test.com", password: "123")
-User.create(user_name: "bushyhead", email: "butler@test.com", password: "123")
-User.create(user_name: "adam", email: "adam@test.com", password: "123")
+User.create(user_name: "papajons", email: "jon@test.com", password: "123")
+User.create(user_name: "basher", email: "basher@test.com", password: "123")
+User.create(user_name: "kingadam", email: "kingadam@test.com", password: "123")
 
 puts "Test cases seeded ----------->>>"
 Case.create(title: "The Kid is Not My Son", summary: "Billie Jean is not my lover.... she took my soul and said that I was the one. But...")
