@@ -1,0 +1,26 @@
+<%= render partial: "pages/ijuryheader" %>
+
+<h1>Submit your story</h1>
+<%= form_tag evidences_path do %>
+  <%= label_tag "Argument" %>
+  <%= text_area_tag :argument %>
+  <%= label_tag "Video URL" %>
+  <%= text_field_tag :video_url %>
+  <%= label_tag "Photo URL" %>
+  <%= text_field_tag :photo_url %>
+  <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
+  <%= submit_tag "Submit Argument" %>
+<% end %>
+
+
+
+<%= render partial: "pages/ijuryfooter" %>
+
+<!--   create_table "evidences", :force => true do |t|
+    t.text     "argument"
+    t.string   "video_url"
+    t.string   "photo_url"
+    t.integer  "cases_user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end -->

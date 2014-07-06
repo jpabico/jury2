@@ -1,12 +1,21 @@
 <section class="dashboard-alerts">
-<h3>Alerts</h3>
-<ul class="alerts-panel">
-<li><%= "count inactive" %> invites need your attention</li>
-<li><%= "count open" %> cases open</li>
-<li><%= "count closed" %> cases closed</li>
-</ul>
+	<h3>Alerts</h3>
+	<h5><%= @my_invites.count %> invites need your attention!</h5>
+
+	<ul>
+		<% @my_invites.each do |my_invite| %>
+			<li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
+		<% end %>	
+	</ul>
 </section>
 
+<section class="dashboard-counts"
+<h3>Counts</h3>
+	<ul>
+		<li><%= @active_cases.count %> active cases</li>
+		<li><%= @closed_cases.count  %> closed cases</li>
+	</ul>
+</section>
 
 <section class="cases-create">
 <h3>Create new case</h3>
@@ -14,19 +23,38 @@
 </section>
 
 <section class="cases-mycases">
-<h3>My Cases</h3>
-<% @mycases.each do |mycase| %>
-  <%= mycase.title  %><br />
-<% end  %>
 
+<h3>My Cases</h3>
+	<% @my_cases.each do |my_case| %>
+		<ul>
+	  	<li><a href="/cases/<%= my_case.id %>"><%= my_case.title  %></a></li>
+	  	<li><%= my_case.users[0].user_name %> v. <%= my_case.users[1].user_name %></li>
+
+ 		 	<li><%= my_case.status %></li>
+ 		</ul>
+	<% end  %>
+	
 </section>
 
 
 <section class="cases-showactive">
-<h3>Active Cases. Vote to be heard!</h3>
-Case.all.where(case_status: "active")
+<h3>All Active Cases</h3>
+	<% @active_cases.each do |active_case| %>
+		<ul>
+  		<li><a href="/cases/<%= active_case.id %>"><%= active_case.title  %></a></li>
+			<li><%= active_case.users[0].user_name %> v. <%= active_case.users[1].user_name %></li>
+		</ul>
+	<% end  %>
 </section>
 
 <section class="cases-showclosed">
-<h3>Closed Cases</h3>Case.all.where(case_status: "closed")
+<h3>All Closed Cases</h3>
+	<% @closed_cases.each do |closed_case| %>
+		<ul>
+  		<li><a href="/cases/<%= closed_case.id %>"><%= closed_case.title  %></a></li>
+  		<li><%= closed_case.users[0].user_name %> v. <%= closed_case.users[1].user_name %></li>
+
+		</ul>
+	<% end  %>
+
 </section>
