@@ -1,39 +1,81 @@
-<h3>Display of a specific case</h3>
+<% if @case.status == "pending" && session[:id] == @case.cases_users[0].user_id %>
+	<p> Hi Plaintiff, view the case before it's live</p>
+
+<% elsif @case.status == "pending" && session[:id] == @case.cases_users[1].user_id %>
+	<p> Add a partial for defendant to enter info and then change the case status to active!</p>
+
+<% elsif @case.status == "pending" %>
+	<p> Case is not available yet.  Come back soon! </p>
+
+<% elsif @case.status == "active" %>
+	
+	<h3>Case</h3>
+
+	<div><%= @case.title %></div>
+
+	<div class="person1">
+
+		PLAINTIFF: <%= @case.users[0].user_name %>
+
+		<div class="video1">
+				<iframe width="560" height="315" src="<%= @case.cases_users[0].evidence.video_url %>" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<div class="argumentText1">
+			PLAINTIFF's ARGUMENT: <%= @case.cases_users[0].evidence.argument %>
+		</div>
+
+		<div class="vote-plaintiff">
+  		<%= button_to "Vote", ballots_path(role: "plaintiff", case_id: @case.id) %>
+  		<br>
+      <%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %>
+		</div>
+
+	</div>
+
+	<div class="person2">
+
+		DEFENDANT:<%= @case.users[1].user_name %>
+
+		<div class="video2">
+			<iframe width="420" height="315" src="<%= @case.cases_users[1].evidence.video_url %>" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<div class="argumentText2">
+			Defendant's ARGUMENT: <%= @case.cases_users[1].evidence.argument %>
+		</div>
+
+		<div class="vote-defendant">
+    	<%= button_to "Vote", ballots_path(role: "defendant", case_id: @case.id) %>
+    	<br>
+    	<%= Ballot.where(:role => "defendant", :case_id => @case.id).count %>
+		</div>
+
+	</div>
 
 
-<div><%= @case.title %></div>
-<br/>
-<div class="person1">PLAINTIFF: <%= @case.users[0].user_name %>
+<% elsif @case.status == "closed"  %>
+	<p> we can show what happens after the time has been expired </p>
 
-<div class="video1"><iframe width="560" height="315" src="<%= @case.cases_users[0].evidence.video_url %>" frameborder="0" allowfullscreen></iframe></div>
+<% else %>
+	<p> Hmm... didn't plan this scenario.
 
-<div class="argumentText1">PLAINTIFF's ARGUMENT: <%= @case.cases_users[0].evidence.argument %></div>
+<% end %>
 
-</div>
-
-
-
-
-<div class="person2">DEFENDANT:<%= @case.users[1].user_name %>
-
-<div class="video2"><iframe width="420" height="315" src="<%= @case.cases_users[1].evidence.video_url %>" frameborder="0" allowfullscreen></iframe></div>
-
-<div class="argumentText2">Defendant's ARGUMENT: <%= @case.cases_users[1].evidence.argument %></div>
-
-</div>
 <!--
 <div class="commentsBox">
 <p>Comments</p>
 @case.comments.each do |comment|
 
-<span> User.find(comment.user_id).user_name
- : comment.content </span><br>
-end -->
+		<div class="argumentText2">
+			Defendant's ARGUMENT: @case.cases_users[1].evidence.argument
+		</div>
 
-
+	</div>
 
 
 
 </div>
 
 <div>FEATURE TBI - SIDE MENU??</div>
+-->
