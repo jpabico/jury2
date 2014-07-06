@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   def dashboard
   	@target_user = User.find(session[:id])
 
-  	@my_cases = User.find(session[:id]).cases
+  	@my_cases = User.find(session[:id]).cases.order('status').order('created_at')
 
   	@my_invites = User.find(session[:id]).cases.where(status: "pending")
     
