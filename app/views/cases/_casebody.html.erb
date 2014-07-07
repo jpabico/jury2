@@ -54,13 +54,14 @@
 		</div>
 
 	</div>
+<%= render partial: "comments" %>
 
 
 <% elsif @case.status == "closed"  %>
 	<p> we can show what happens after the time has been expired </p>
 
 <% else %>
-	<p> Hmm... didn't plan this scenario.
+	<p> Hmm... didn't plan this scenario.</p>
 
 <% end %>
 
