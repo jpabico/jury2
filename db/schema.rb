@@ -24,12 +24,10 @@ ActiveRecord::Schema.define(:version => 20140706211949) do
   create_table "cases", :force => true do |t|
     t.string   "title"
     t.string   "summary"
-    t.integer  "user_1_vote_count", :default => 0
-    t.integer  "user_2_vote_count", :default => 0
-    t.string   "status",            :default => "pending"
+    t.string   "status",     :default => "pending"
     t.string   "winner"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "cases_users", :force => true do |t|
