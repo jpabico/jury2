@@ -4,10 +4,14 @@
 		<% invite_count = 0 %>
 		<% @my_invites.each do |my_invite| %>
 			<% if my_invite.users[0].id != session[:id] %>
+
+
 				<li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
+
+
 				<% invite_count += 1 %>
 			<% end %>
-		<% end %>	
+		<% end %>
 		<% if invite_count == 0 %>
 			<li><%= "No Alerts at the moment.  All clear!" %></li>
 		<% end %>
@@ -32,7 +36,7 @@
  		 	<li><%= my_case.status %></li>
  		</ul>
 	<% end  %>
-	
+
 </section>
 
 <section class="cases-showactive">
