@@ -1,6 +1,6 @@
 IJURY::Application.routes.draw do
 
-  root to: 'pages#main'
+  root to: 'pages#dashboard'
 
   resources :ballots
   resources :users

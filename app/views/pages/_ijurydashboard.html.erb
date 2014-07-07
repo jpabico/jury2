@@ -1,43 +1,45 @@
-<section class="dashboard-alerts">
-	<h3>Alerts</h3>
-	<ul>
-		<% invite_count = 0 %>
-		<% @my_invites.each do |my_invite| %>
-			<% if my_invite.users[0].id != session[:id] %>
-
-
-				<li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
-
-
-				<% invite_count += 1 %>
-			<% end %>
-		<% end %>
-		<% if invite_count == 0 %>
-			<li><%= "No Alerts at the moment.  All clear!" %></li>
-		<% end %>
-	</ul>
-</section>
-
-<section class="cases-create">
-<h3>Create new case</h3>
-<%= link_to "Create a Case", new_case_path %>
-</section>
-
-<section class="cases-mycases">
-
-<h3>My Cases</h3>
-<h5>Total <%= @my_cases.count  %> my cases</h5>
-
-	<% @my_cases.each do |my_case| %>
+<% if session[:id] %>
+	<section class="dashboard-alerts">
+		<h3>Alerts</h3>
 		<ul>
-	  	<li><a href="/cases/<%= my_case.id %>"><%= my_case.title  %></a></li>
-	  	<li><%= my_case.users[0].user_name %> v. <%= my_case.users[1].user_name %></li>
+			<% invite_count = 0 %>
+			<% @my_invites.each do |my_invite| %>
+				<% if my_invite.users[0].id != session[:id] %>
 
- 		 	<li><%= my_case.status %></li>
- 		</ul>
-	<% end  %>
 
-</section>
+					<li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
+
+
+					<% invite_count += 1 %>
+				<% end %>
+			<% end %>
+			<% if invite_count == 0 %>
+				<li><%= "No Alerts at the moment.  All clear!" %></li>
+			<% end %>
+		</ul>
+	</section>
+
+	<section class="cases-create">
+	<h3>Create new case</h3>
+	<%= link_to "Create a Case", new_case_path %>
+	</section>
+
+	<section class="cases-mycases">
+
+	<h3>My Cases</h3>
+	<h5>Total <%= @my_cases.count  %> my cases</h5>
+
+		<% @my_cases.each do |my_case| %>
+			<ul>
+		  	<li><a href="/cases/<%= my_case.id %>"><%= my_case.title  %></a></li>
+		  	<li><%= my_case.users[0].user_name %> v. <%= my_case.users[1].user_name %></li>
+
+	 		 	<li><%= my_case.status %></li>
+	 		</ul>
+		<% end  %>
+	</section>
+
+<% end %>
 
 <section class="cases-showactive">
 <h3>All Active Cases</h3>
