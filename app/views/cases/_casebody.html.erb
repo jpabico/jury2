@@ -2,13 +2,15 @@
 	<p> Hi Plaintiff, view the case before it's live</p>
 
 <% elsif @case.status == "pending" && session[:id] == @case.cases_users[1].user_id %>
-	<p> Add a partial for defendant to enter info and then change the case status to active!</p>
+
+	<%= render partial: "/evidences/evidencebody" %>
+
 
 <% elsif @case.status == "pending" %>
 	<p> Case is not available yet.  Come back soon! </p>
 
 <% elsif @case.status == "active" %>
-	
+
 	<h3>Case</h3>
 
 	<div><%= @case.title %></div>
@@ -63,19 +65,6 @@
 <% end %>
 
 <!--
-<div class="commentsBox">
-<p>Comments</p>
-@case.comments.each do |comment|
-
-		<div class="argumentText2">
-			Defendant's ARGUMENT: @case.cases_users[1].evidence.argument
-		</div>
-
-	</div>
-
-
-
-</div>
 
 <div>FEATURE TBI - SIDE MENU??</div>
 -->

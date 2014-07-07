@@ -9,10 +9,10 @@ IJURY::Application.routes.draw do
   get '/test', to: 'pages#test', as: 'test'
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :cases do
-    resources :comments do
-      resources :votes
-    end
+    resources :comments
   end
+  resources :votes
+
 
 
 end

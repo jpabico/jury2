@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20140706211949) do
   create_table "votes", :force => true do |t|
     t.string   "direction"
     t.integer  "comment_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
