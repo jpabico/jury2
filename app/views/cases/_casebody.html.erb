@@ -2,7 +2,9 @@
 	<p> Hi Plaintiff, view the case before it's live</p>
 
 <% elsif @case.status == "pending" && session[:id] == @case.cases_users[1].user_id %>
-	<p> Add a partial for defendant to enter info and then change the case status to active!</p>
+
+	<%= render partial: "/evidences/evidencebody" %>
+
 
 <% elsif @case.status == "pending" %>
 	<p> Case is not available yet.  Come back soon! </p>

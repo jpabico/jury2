@@ -1,17 +1,7 @@
 <%= render partial: "/layouts/ijuryheader" %>
 
-<h1>Submit your story</h1>
-<%= form_tag evidences_path do %>
-  <%= label_tag "Argument" %>
-  <%= text_area_tag :argument %>
-  <%= label_tag "Video URL" %>
-  <%= text_field_tag :video_url %>
-  <%= label_tag "Photo URL" %>
-  <%= text_field_tag :photo_url %>
-  <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
-  <%= submit_tag "Submit Argument" %>
-<% end %>
 
+<%= render partial: "evidencebody" %>
 
 
 <%= render partial: "/layouts/ijuryfooter" %>
