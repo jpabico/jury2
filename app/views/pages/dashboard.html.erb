@@ -1,8 +1,13 @@
-<%= render "/layouts/ijuryheader" %>
+<div id="header_top">
+  <%= render "/layouts/ijuryheader" %>
+</div>
 <div id="auth_panel">
   <%= render :partial => '/users/sign_up', :locals => {:user => @user} %>
   <%= render :partial => '/sessions/sign_in', :locals => {:user => @user} %>
 </div>
-<%= render "ijurydashboard" %>
-
-<%= render "/layouts/ijuryfooter" %>
+<div id="dashboard_middle">
+  <%= render "ijurydashboard" %>
+</div>
+<div id="footer_bottom">
+  <%= render "/layouts/ijuryfooter" %>
+</div>
