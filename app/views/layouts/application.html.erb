@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Lato:300,400' rel='stylesheet' type='text/css'>
   <title>IJURY</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -8,7 +9,17 @@
 </head>
 <body>
 
-<%= yield %>
+  <div id="header_top_main">
+    <%= render "/layouts/ijuryheader" %>
+  </div>
+
+  <div id="body_middle_main">
+  <%= yield %>
+  <div>
+
+  <div id="footer_bottom_main">
+    <%= render "/layouts/ijuryfooter" %>
+  </div>
 
 </body>
 </html>
