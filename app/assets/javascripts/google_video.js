@@ -55,3 +55,10 @@ function onProcessingComplete(event) {
       videoId: 'M7lc1UVf-VE'
     });
   }
+
+//   $(document).ready(function() {
+//     $('#sign_up_trigger').on('click',function(event) {
+//         event.preventDefault();
+//         $('#sign_up_box').toggle();
+//     });
+// });
