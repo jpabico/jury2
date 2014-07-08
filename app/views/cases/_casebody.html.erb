@@ -54,7 +54,31 @@
 		</div>
 
 	</div>
-<%= render partial: "comments" %>
+<div class="commentsBox">
+  <% @comment = Comment.new %>
+  <%= form_for [@case, @comment], :url => case_comments_path(@case, @comment), remote: true do |f| %>
+    <%= f.label "Comment" %>
+    <%= f.text_field :body %>
+    <%= f.submit "Submit"%>
+  <% end %>
+
+
+
+
+<div id = "commentslist">Comments
+<br>
+
+<% @case.comments.each do |comment| %>
+    <%= comment.body %> -<%= User.find(comment.user_id).user_name %>
+    <%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]) %>
+    <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]) %>
+    Up-Votes:<%= comment.votes.where(:direction => "up").count %>
+    <br>
+    Down-Votes:<%= comment.votes.where(:direction => "down").count %>
+    <br>
+  <% end %>
+</div>
+</div>
 
 
 <% elsif @case.status == "closed"  %>
@@ -65,7 +89,3 @@
 
 <% end %>
 
-<!--
-
-<div>FEATURE TBI - SIDE MENU??</div>
--->

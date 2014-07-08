@@ -72,6 +72,6 @@ Evidence.create(argument: "This is some great evidence for the defendant", video
 
 
 puts "Test comments seeded ----------->>>"
-Comment.create(content:"hello", user_id:1,case_id:1)
+Comment.create(body:"hello", user_id:1,case_id:1)
 
 
