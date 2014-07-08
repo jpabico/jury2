@@ -5,21 +5,30 @@
   <%= text_area_tag :argument %>
   <%= label_tag "Photo URL" %>
   <%= text_field_tag :photo_url %>
+  
   <%= hidden_field_tag :case_id, params[:id] %>
   <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
 
   <br>
   <% if current_user %>
-    Signed in to Google as <strong><%= current_user.name %></strong>!<br>
-    <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
+    <div id="google-auth">
+      Signed in to Google as <strong><%= current_user.name %></strong>!<br>
+      <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
+    </div>
+
+    <%= label_tag "Video ID" %>
+    <%= text_field_tag :video_url %>
+
+    <div id="video-status">No video uploaded yet</p></div>
 
     <div id="widget"></div>
     <div id="player"></div><br>
-    <%= label_tag "Video URL" %>
-    <%= text_field_tag :video_url %><br>
 
   <% else %>
-    <%= link_to "Sign in with Google to upload video", "/auth/google_oauth2", id: "sign_in" %>
+    <div id="google-auth">
+      <%= link_to "Sign in to Google to upload your video", "/auth/google_oauth2", id: "sign_in" %>
+    </div>
+
   <% end %>
 
   <br>

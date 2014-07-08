@@ -1,0 +1,28 @@
+	<h3>Case Preview</h3>
+
+	<div><%= @case.title %></div>
+
+	<div class="person1">
+
+		PLAINTIFF: <%= @case.users[0].user_name %>
+
+		<div class="argumentText1">
+		</div>
+
+		<div class="video1">
+			<iframe id="ytplayer" type="text/html" width="420" height="237" src="http://www.youtube.com/embed/<%= @case.cases_users[0].evidence.video_url %>" frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+
+	</div>
+
+	<div class="person2">
+
+		DEFENDANT:<%= @case.users[1].user_name %>
+
+		<div class="case-message">
+			Awaiting argument from your opponent...
+		</div>
+
+	</div>
+	
