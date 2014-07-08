@@ -1,11 +1,9 @@
 <div class="commentsBox">
 
-  <%= form_tag case_comments_path(@case) do %>
-    <%= label_tag "Comment" %>
-    <%= text_area_tag :comment %>
-    <%= submit_tag "Submit Argument" %>
-    <%= hidden_field_tag :real_case_id, @case.id %>
-    <%= hidden_field_tag :user_id, session[:id] %>
+  <%= form_for case_comments_path(@case), remote: true do |f| %>
+    <%= f.label "Comment" %>
+    <%= f.text_field :comment %>
+    <%= f.submit "Submit"%>
   <% end %>
 
 
