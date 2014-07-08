@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
   $('.vote-defendant').on("ajax:success", function(e, data, status, xhr){
     $("#defendant_vote_count").text(data);
   });
@@ -7,8 +8,10 @@ $(document).ready(function() {
     $("#plaintiff_vote_count").text(data);
   });
    $('.commentsBox').on("ajax:success", function(e, data, status, xhr){
-      console.log(data);
+      $('.commentsBox').append(data)
   });
+ })
 
 
-   })
+
+
