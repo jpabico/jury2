@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function() {
+    $('#sign_up_trigger').on('click',function(event) {
+        event.preventDefault();
+        $('#sign_up_box').toggle();
+    });
+});
+
+

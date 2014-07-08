@@ -1,7 +1,13 @@
+<div id="cool_pic">
+	<br>
+	<div id="main_logo">
+		<%= image_tag("bluelogo.png") %>
+	</div>
+</div>
 <% if session[:id] %>
 	<%= button_to "log out", session_path(session[:id]), method: :delete, redirect_to: "/" %>
-
   <h3>Dashboard for <%= User.find(session[:id]).user_name %></h3>
+
 	<section class="dashboard-alerts">
 		<h3>Alerts</h3>
 		<ul>
@@ -43,11 +49,14 @@
 	</section>
 
 <% end %>
-
+ <!-- if user is not logged in this page is at the top -->
 <section class="cases-showactive">
-<h3>All Active Cases</h3>
-
-<h5>Total <%= @active_cases.count %> active cases</h5>
+<div id="active_cases_header">
+	<span class="cases_ribbon">&nbsp;A l l &nbsp;&nbsp;&nbsp; A c t i v e &nbsp;&nbsp;&nbsp; C a s e s</span>
+</div>
+<br>
+<span class="cases_count_ribbon">Total <%= @active_cases.count %> active cases
+</span>
 
 	<% @active_cases.each do |active_case| %>
 		<ul>
@@ -58,8 +67,12 @@
 </section>
 
 <section class="cases-showclosed">
-<h3>All Closed Cases</h3>
-<h5>Total <%= @closed_cases.count  %> closed cases</h5>
+<div id="active_cases_header">
+	<span class="cases_ribbon">&nbsp;All &nbsp;&nbsp;&nbsp; Closed &nbsp;&nbsp;&nbsp; Cases</span>
+</div>
+<br>
+<span class="cases_count_ribbon">Total <%= @closed_cases.count  %> closed cases
+</span>
 
 	<% @closed_cases.each do |closed_case| %>
 		<ul>
