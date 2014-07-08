@@ -1,36 +1,37 @@
 
 <h1>Submit your story</h1>
 <%= form_tag evidences_path do %>
-  <%= label_tag "Argument" %>
-  <%= text_area_tag :argument %>
-  <%= label_tag "Photo URL" %>
-  <%= text_field_tag :photo_url %>
-  
-  <%= hidden_field_tag :case_id, params[:id] %>
-  <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
 
-  <br>
+<!--  Not using photo URL for MVP
+label_tag "Photo URL" %>
+text_field_tag :photo_url %> 
+-->
   <% if current_user %>
-    <div id="google-auth">
+
+    <div class="google-auth">
       Signed in to Google as <strong><%= current_user.name %></strong>!<br>
       <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
     </div>
-
-    <%= label_tag "Video ID" %>
-    <%= text_field_tag :video_url %>
 
     <div id="video-status">No video uploaded yet</p></div>
 
     <div id="widget"></div>
     <div id="player"></div><br>
 
+    <%= label_tag "Video ID" %>
+    <%= text_field_tag :video_url %>
+
   <% else %>
-    <div id="google-auth">
+    <div class="google-auth">
       <%= link_to "Sign in to Google to upload your video", "/auth/google_oauth2", id: "sign_in" %>
     </div>
 
   <% end %>
 
-  <br>
+  <%= label_tag "Argument" %>
+  <%= text_area_tag :argument %>
+  <%= hidden_field_tag :case_id, params[:id] %>
+  <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>  
+
   <%= submit_tag "Submit Argument" %>
 <% end %>
