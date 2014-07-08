@@ -2,11 +2,15 @@ require 'spec_helper'
 
 describe PagesController do
 
-  describe 'GET #main' do
-    it "renders the :main view" do
-    get :main
-    expect(response).to render_template :main
+  describe 'GET #dashboard' do
+    it "renders the :dashboard view" do
+      get :dashboard
+      expect(response).to render_template :dashboard
     end
+  end
+
+  describe 'GET #dashboard' do
+
   end
 
 end
