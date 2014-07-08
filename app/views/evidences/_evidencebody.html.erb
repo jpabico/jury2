@@ -10,13 +10,13 @@
 
   <br>
   <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!<br>
+    Signed in to Google as <strong><%= current_user.name %></strong>!<br>
     <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
-    <%= label_tag "Video URL" %>
-    <%= text_field_tag :video_url %>
 
     <div id="widget"></div>
-    <div id="player"></div>
+    <div id="player"></div><br>
+    <%= label_tag "Video URL" %>
+    <%= text_field_tag :video_url %><br>
 
   <% else %>
     <%= link_to "Sign in with Google to upload video", "/auth/google_oauth2", id: "sign_in" %>
