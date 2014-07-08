@@ -74,7 +74,7 @@ CasesUser.create(case_id: 10, user_id: 4, party: "defendant")
 Evidence.create(argument: "Capybaras are soooooooo adorable.  What's not to love about them?", video_url: "2bXJ6PxSlBs", cases_user_id: 19)
 Evidence.create(argument: "Capybara looks like a rat.  I don't like rats.", video_url: "0jo_EG7XqZQ", cases_user_id: 20)
 
-puts "Creating pending cases to alert user1 ----------->>>"
+puts "Creating pending case to alert user1 ----------->>>"
 Case.create(title: "Spiderman is stronger than Batman!", summary: "Spiderman is so epic.  He has spider skills")
 CasesUser.create(case_id: 11, user_id: 2, party: "plaintiff")
 CasesUser.create(case_id: 11, user_id: 1, party: "defendant")
