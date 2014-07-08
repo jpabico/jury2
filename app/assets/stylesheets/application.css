@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+body {
+  background-color:#fbfbfb;
+}
+
+#auth_panel {
+  width:120px;
+  height:160px;
+  background-color: black;
+  float:right;
+}
+
+#header_top {
+  background-color: red;
+}

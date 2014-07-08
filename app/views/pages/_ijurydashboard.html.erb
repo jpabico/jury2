@@ -1,4 +1,7 @@
 <% if session[:id] %>
+	<%= button_to "log out", session_path(session[:id]), method: :delete, redirect_to: "/" %>
+
+  <h3>Dashboard for <%= User.find(session[:id]).user_name %></h3>
 	<section class="dashboard-alerts">
 		<h3>Alerts</h3>
 		<ul>
