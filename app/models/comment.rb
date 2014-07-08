@@ -4,4 +4,6 @@ class Comment < ActiveRecord::Base
   belongs_to :parent_comment, class_name: "Comment"
   has_many :votes
 
+  validates content: , presence: :true
+
 end
