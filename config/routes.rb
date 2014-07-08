@@ -13,6 +13,15 @@ IJURY::Application.routes.draw do
   end
   resources :votes
 
+  # google omniauth
+  get 'google/create'
+  get 'google/destroy'
+  get 'auth/:provider/callback', to: 'google#create'
+  get 'auth/failure', to: redirect('/')
+  get 'gsignout', to: 'google#destroy', as: 'gsignout'
+
+  resources :google, only: [:create, :destroy]
 
 
 end
+

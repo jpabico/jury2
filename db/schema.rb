@@ -60,8 +60,13 @@ ActiveRecord::Schema.define(:version => 20140706211949) do
     t.string   "user_name"
     t.string   "email"
     t.string   "password_hash"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   create_table "votes", :force => true do |t|
