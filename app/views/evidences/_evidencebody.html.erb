@@ -1,3 +1,4 @@
+
 <h1>Submit your story</h1>
 <%= form_tag evidences_path do %>
   <%= label_tag "Argument" %>
@@ -13,6 +14,10 @@
     <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
     <%= label_tag "Video URL" %>
     <%= text_field_tag :video_url %>
+
+    <div id="widget"></div>
+    <div id="player"></div>
+
   <% else %>
     <%= link_to "Sign in with Google to upload video", "/auth/google_oauth2", id: "sign_in" %>
   <% end %>

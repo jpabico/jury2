@@ -1,7 +1,7 @@
 class GoogleController < ApplicationController
   def create
 
-    if params[:case_id] == ""
+    if params[:case_id] == "" || params[:case_id] == nil
       user = User.from_omniauth(env["omniauth.auth"])
       session[:user_id] = user.id
 
@@ -17,7 +17,7 @@ class GoogleController < ApplicationController
   end
 
   def destroy
-    if params[:case_id] == ""
+    if params[:case_id] == "" || params[:case_id] == nil
       # Redirect back to original plaintiff url
       session[:user_id] = nil
       redirect_to :controller => 'evidences', :action => 'new', :case_user_plaintiff => session[:case_user_plaintiff]
