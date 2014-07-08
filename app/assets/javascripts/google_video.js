@@ -40,25 +40,18 @@ function onProcessingComplete(event) {
 }
 
 // For the player to display on cases page
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var tag2 = document.createElement('script');
+tag2.src = "https://www.youtube.com/player_api";
+var firstScriptTag2 = document.getElementsByTagName('script')[0];
+firstScriptTag2.parentNode.insertBefore(tag2, firstScriptTag2);
 
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var casePlayer;
-  function onYouTubePlayerAPIReady() {
-    casePlayer = new YT.Player('ytplayer', {
-      height: 390,
-      width: 640,
-      videoId: 'M7lc1UVf-VE'
-    });
-  }
-
-//   $(document).ready(function() {
-//     $('#sign_up_trigger').on('click',function(event) {
-//         event.preventDefault();
-//         $('#sign_up_box').toggle();
-//     });
-// });
+// Replace the 'ytplayer' element with an <iframe> and
+// YouTube player after the API code downloads.
+var casePlayer;
+function onYouTubePlayerAPIReady() {
+  casePlayer = new YT.Player('ytplayer', {
+    height: 390,
+    width: 640,
+    videoId: 'M7lc1UVf-VE'
+  });
+}
