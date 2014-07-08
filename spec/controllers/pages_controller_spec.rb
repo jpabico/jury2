@@ -9,8 +9,4 @@ describe PagesController do
     end
   end
 
-  describe 'GET #dashboard' do
-
-  end
-
 end
