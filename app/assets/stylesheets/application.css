@@ -11,3 +11,180 @@
  *= require_self
  *= require_tree .
  */
+/*body {
+  background-color:#fbfbfb;
+}
+
+#auth_panel {
+  width:120px;
+  height:160px;
+  background-color: black;
+  float:right;
+}*/
+body {
+  width: 100%;
+  -webkit-box-shadow: 0px 2px 1px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 2px 1px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 2px 1px 0px rgba(50, 50, 50, 0.75);
+}
+
+#header_top_main {
+  /*border-bottom: 20px solid black;*/
+  margin-bottom: 16px;
+  width: 100%;
+  background-color: white;
+  height: 3.8em;
+}
+
+#body_middle_main {
+  background-color: white;
+  margin-top: -0.95em;
+}
+
+#footer_bottom_main {
+  background-color: #E3E3E3;
+}
+
+
+/*header css*/
+/*starts here*/
+
+#navigation {
+  display: inline;
+
+}
+
+#header_left {
+  width: 16em;
+  float:left;
+}
+
+#logo_img {
+  float:left;
+}
+
+#header_right {
+  float:right;
+}
+
+#sign_in {
+}
+
+#su_trigger {
+  font-size: 11px;
+}
+
+#sign_up_trigger {
+  float:right;
+}
+
+#slogan {
+font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+}
+
+#sign_up_box {
+  z-index: 1;
+  display: none;
+  padding-top: 10px;
+  margin-left: 180px;
+  margin-top: 34px;
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border:1px solid #DDDDE0;
+  position: absolute;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 1px 3px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 1px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+#sign_up_box:before {
+    z-index: 10;
+    content: "";
+    position: absolute;
+    top: -5.0px;
+    left:110px;
+    height:10px;
+    width:10px;
+    background:white;
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    border-top: 1px solid #DDDDE0;
+    border-left: 1px solid #DDDDE0;
+
+
+}
+
+
+/*This is dashboard CSS*/
+
+#cool_pic {
+  width: 100%;
+  height: 13em;
+  position: relative;
+  /*background-image:url('cool_pix.jpg');*/
+  /*background-position: right 20px center;*/
+  /*background-repeat:no-repeat;*/
+  /*background-size: 80px 60px;*/
+  background-color: #B6B6B8;
+}
+
+#main_logo {
+  margin: 0 auto;
+  z-index: 99999;
+  width: 20em;
+}
+
+#active_cases_header {
+  background-color: black;
+}
+
+.cases_ribbon {
+  color:white;
+  font-size: 20px;
+  font-weight: lighter;
+  font-family: 'Lato', sans-serif;
+}
+
+.cases_count_ribbon {
+  position: relative;
+  font-size: 13px;
+  background-color: red;
+  color: white;
+  -webkit-box-shadow: 0px 2px 4px #888;
+  -moz-box-shadow: 0px 2px 4px #888;
+  box-shadow: 0px 2px 4px #888;
+  padding: 3px 20px 3px 30px;
+  margin: 30px 8px 10px -7px;
+
+}
+
+.cases_count_ribbon:after
+{
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 1px;
+  top: 21px;
+  border-width: 4px 3.98px;
+  border-style: solid;
+  border-color: #666 #666 transparent transparent;
+}
+
+.cases_count_ribbon:before
+{
+  background-color: white;
+  content: ' ';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -9px;
+  top: 1.8px;
+  border: transparent;
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+}

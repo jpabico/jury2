@@ -13,9 +13,10 @@ describe SessionsController do
     end
     context "with valid user login" do
       it "sets the session to current user" do
-          post :create, session: { user_name: @user.user_name, email: @user.email, password_hash: @user.password_hash}
+          session[:user_id] = @user.id
           expect(controller.current_user).to eq @user
       end
+
       it "redirects the user to the dashboard" do
           post :create, session: { user_name: @user.user_name, email: @user.email, password_hash: @user.password_hash}
           expect(response).to redirect_to root_path

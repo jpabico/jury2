@@ -6,11 +6,11 @@ User.create(user_name: "basher", email: "basher@test.com", password: "123")
 User.create(user_name: "kingadam", email: "kingadam@test.com", password: "123")
 
 puts "MJ/Supermodel test cases seeded as pending ----------->>>"
-Case.create(title: "The Kid is Not My Son", summary: "Billie Jean is not my lover.... she took my soul and said that I was the one. But...")
+Case.create(title: "The Kid is Not My Son", summary: "Billie Jean is not my lover.... she took my soul and said that I was the one. But...", status: "active")
 CasesUser.create(case_id: 1, user_id: 1, party: "plaintiff")
 CasesUser.create(case_id: 1, user_id: 2, party: "defendant")
-Evidence.create(argument: "MJ is awesome", video_url: "http://test.com", cases_user_id: 1)
-Evidence.create(argument: "MJ is not awesome", video_url: "http://test.com", cases_user_id: 2)
+Evidence.create(argument: "MJ is awesome", video_url: "Zi_XLOBDo_Y", cases_user_id: 1)
+Evidence.create(argument: "MJ is not awesome", video_url: "sOnqjkJTMaA", cases_user_id: 2)
 
 Case.create(title: "You are not a supermodel", summary: "Pabico thinks he's so sexy, but not so much says I.  Like seriously. ")
 CasesUser.create(case_id: 2, user_id: 4, party: "plaintiff")

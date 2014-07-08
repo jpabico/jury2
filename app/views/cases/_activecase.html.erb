@@ -1,0 +1,44 @@
+	<h3>Case</h3>
+
+	<div><%= @case.title %></div>
+
+	<div class="person1">
+
+		PLAINTIFF: <%= @case.users[0].user_name %>
+
+		<div class="argumentText1">
+			PLAINTIFF's ARGUMENT: <%= @case.cases_users[0].evidence.argument %>
+		</div>
+
+		<div class="video1">
+			<iframe id="ytplayer" type="text/html" width="420" height="237" src="http://www.youtube.com/embed/<%= @case.cases_users[0].evidence.video_url %>" frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+
+		<div class="vote-plaintiff">
+  		<%= button_to "Vote", ballots_path(role: "plaintiff", case_id: @case.id) %>
+      <%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %>
+		</div>
+
+	</div>
+
+	<div class="person2">
+
+		DEFENDANT:<%= @case.users[1].user_name %>
+
+		<div class="argumentText2">
+			Defendant's ARGUMENT: <%= @case.cases_users[1].evidence.argument %>
+		</div>
+
+		<div class="video2">
+			<iframe id="ytplayer" type="text/html" width="420" height="237" src="http://www.youtube.com/embed/<%= @case.cases_users[1].evidence.video_url %>" frameborder="0" allowfullscreen>
+			</iframe>
+		</div>
+
+
+		<div class="vote-defendant">
+    	<%= button_to "Vote", ballots_path(role: "defendant", case_id: @case.id) %>
+    	<%= Ballot.where(:role => "defendant", :case_id => @case.id).count %>
+		</div>
+
+	</div>

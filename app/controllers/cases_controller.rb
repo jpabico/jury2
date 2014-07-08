@@ -11,8 +11,9 @@ class CasesController < ApplicationController
   end
 
   def show
-
     @case = Case.find(params[:id])
+    session[:case_id] = params[:id]
+
   end
 
 end
