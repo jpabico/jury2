@@ -1,5 +1,5 @@
-countdown_time1 = 1.minutes
-countdown_time2 = 10.minutes
+countdown_time1 = 5.minutes
+countdown_time2 = 15.minutes
 countdown_time3 = 12.hours
 countdown_time4 = 1.days
 countdown_time5 = 2.days
