@@ -223,6 +223,7 @@ background-image:url('wood.jpg');
 .case_title_list {
   font-family: 'Fjalla One', sans-serif;
   font-size: 28px;
+
 }
 
 .case_names_list {
@@ -236,14 +237,14 @@ background-image:url('wood.jpg');
 
 
 .case_list_item a {
-  color:white;
+  color:#E0E0E0;
   text-decoration: none;
-  text-shadow: 3px 3px 0px rgba(150, 150, 150, 1);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
 }
 
 .case_list_item a:visited {
   text-decoration: none;
-  color:white;
+  color:#E0E0E0;
 }
 
 .case_list_item a:hover {
