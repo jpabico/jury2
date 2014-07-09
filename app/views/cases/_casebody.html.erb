@@ -58,7 +58,7 @@
   <% @comment = Comment.new %>
   <%= form_for [@case, @comment], :url => case_comments_path(@case, @comment), remote: true do |f| %>
     <%= f.label "Comment" %>
-    <%= f.text_area :body, cols: 40, rows: 10 %>
+    <%= f.text_area :body, cols: 40, rows: 7 %>
     <%= f.submit "Submit"%>
   <% end %>
 
@@ -68,13 +68,12 @@
 <div id = "commentslist">
 <br>
 <% @case.comments.each do |comment| %>
-    <%= comment.body %> -<%= User.find(comment.user_id).user_name %>
+    <p><b><%= User.find(comment.user_id).user_name %></b>: <%= comment.body %></p>
     <%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "like", "data-type" => "json" } %>
     <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "dislike", "data-type" => "json" } %>
-    Up-Votes:<span class="<%= comment.id %>up"><%= comment.votes.where(:direction => "up").count %></span>
-    <br>
-    Down-Votes:<span class="<%= comment.id %>down"><%= comment.votes.where(:direction => "down").count %></span>
-    <br>
+    <p>Up-Votes: <span class="<%= comment.id %>up"><%= comment.votes.where(:direction => "up").count %></span>
+    Down-Votes: <span class="<%= comment.id %>down"><%= comment.votes.where(:direction => "down").count %></span>
+  </p>
   <% end %>
 </div>
 </div>
