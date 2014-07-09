@@ -6,6 +6,7 @@ class CreateCases < ActiveRecord::Migration
       t.string :status, default: "pending"
       t.string :winner, default: nil
       t.datetime :active_start
+      t.datetime :active_end      
       t.timestamps
     end
   end
