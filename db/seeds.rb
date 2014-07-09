@@ -61,24 +61,55 @@ CasesUser.create(case_id: 7, user_id: 5, party: "plaintiff")
 CasesUser.create(case_id: 7, user_id: 4, party: "defendant")
 Evidence.create(argument: "Dogs are so cute, and they play well with babies.  What's not to love about them?", video_url: "ilMzs1UHEmw", cases_user_id: 13)
 Evidence.create(argument: "Nothing against dogs... but cats are so much more chill.", video_url: "Kdgt1ZHkvnM", cases_user_id: 14)
+1.upto(450) do |x|
+  Ballot.create(user_id: x, case_id: 7, role: "plaintiff")
+end
+451.upto(782) do |x|
+  Ballot.create(user_id: x, case_id: 7, role: "defendant")
+end
 
 Case.create(title: "Fixed Mindset v. Growth Mindset", summary: "Popular belief is that growth mindset is better, but I disagree!  Fixed mindset is the new thing.", status: "closed")
 CasesUser.create(case_id: 8, user_id: 1, party: "plaintiff")
 CasesUser.create(case_id: 8, user_id: 3, party: "defendant")
 Evidence.create(argument: "It's cool to be fixed and arrogant lol.", video_url: "xmaKXiF5g84", cases_user_id: 15)
 Evidence.create(argument: "Growth mindset is better fool!", video_url: "pN34FNbOKXc", cases_user_id: 16)
+1.upto(1093) do |x|
+  Ballot.create(user_id: x, case_id: 8, role: "plaintiff")
+end
+1094.upto(1209) do |x|
+  Ballot.create(user_id: x, case_id: 8, role: "defendant")
+end
 
 Case.create(title: "TDD is da best.  You should always TDD", summary: "Like, you know about Test Driven Development?  That's like a thing now.", status: "closed")
 CasesUser.create(case_id: 9, user_id: 4, party: "plaintiff")
 CasesUser.create(case_id: 9, user_id: 5, party: "defendant")
 Evidence.create(argument: "There are a 100 reasons for you to love TDD.  Just try it out!", video_url: "QCif_-r8eK4", cases_user_id: 17)
 Evidence.create(argument: "I don't like TDD.  I just like creating brittle feature tests.  You shouldn't do dangerous tests like this BTW.", video_url: "AfOW2CKoobE", cases_user_id: 18)
+Comment.create(body:"What about meditation driven development?", user_id:1,case_id:9)
+Comment.create(body:"I don't think either of these arguments is particularly compelling. You should both go do some research and really develop your cases before posting stuff on this website.", user_id:2,case_id:9)
+1.upto(32) do |x|
+  Ballot.create(user_id: x, case_id: 9, role: "plaintiff")
+end
+33.upto(78) do |x|
+  Ballot.create(user_id: x, case_id: 9, role: "defendant")
+end
 
 Case.create(title: "Capybara is awesome!!!", summary: "Testing with Capybara is great, but little did you know that Capybara also likes hot baths!", status: "closed")
 CasesUser.create(case_id: 10, user_id: 2, party: "plaintiff")
 CasesUser.create(case_id: 10, user_id: 4, party: "defendant")
 Evidence.create(argument: "Capybaras are soooooooo adorable.  What's not to love about them?", video_url: "2bXJ6PxSlBs", cases_user_id: 19)
 Evidence.create(argument: "Capybara looks like a rat.  I don't like rats.", video_url: "0jo_EG7XqZQ", cases_user_id: 20)
+Comment.create(body:"These capybara things are the most disgusting animals I've ever seen. I can't believe that someone would name their software after them", user_id:1,case_id:10)
+Comment.create(body:"Ooooh - so cute - I want one", user_id:2,case_id:10)
+Comment.create(body:"Does anybody really care about this?", user_id:1,case_id:10)
+Comment.create(body:"Find out how to get a free Ipad!!!! Click here", user_id:3,case_id:10)
+Comment.create(body:"Why didn't they just call it 'rat' instead of 'capybara'?", user_id:5,case_id:10)
+1.upto(145) do |x|
+  Ballot.create(user_id: x, case_id: 10, role: "plaintiff")
+end
+146.upto(201) do |x|
+  Ballot.create(user_id: x, case_id: 10, role: "defendant")
+end
 
 puts "Creating pending case to alert user1 ----------->>>"
 Case.create(title: "Spiderman is stronger than Batman!", summary: "Spiderman is so epic.  He has spider skills")
