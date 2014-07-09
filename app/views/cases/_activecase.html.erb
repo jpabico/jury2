@@ -18,8 +18,9 @@
 		</div>
 
 		<div class="vote-plaintiff">
-  		<%= button_to "Vote", case_ballots_path(role: "plaintiff", case_id: @case.id) %>
-      <%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %>
+  		<%= button_to "Vote", case_ballots_path(role: "plaintiff", case_id: @case.id), :remote => true %>
+  		<br>
+      TOTAL BALLOTS: <span id = 'plaintiff_vote_count'><%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %></span>
 		</div>
 
 	</div>
@@ -29,7 +30,7 @@
 		DEFENDANT:<%= @case.users[1].user_name %>
 
 		<div class="argumentText2">
-			Defendant's ARGUMENT: <%= @case.cases_users[1].evidence.argument %>
+			DEFENDANT'S ARGUMENT: <%= @case.cases_users[1].evidence.argument %>
 		</div>
 
 		<div class="video2">
@@ -38,9 +39,31 @@
 		</div>
 
 
-		<div class="vote-defendant">
-    	<%= button_to "Vote", case_ballots_path(role: "defendant", case_id: @case.id) %>
-    	<%= Ballot.where(:role => "defendant", :case_id => @case.id).count %>
-		</div>
+    <div class="vote-defendant">
+      <%= button_to "Vote", case_ballots_path(case_id: @case.id, role: "defendant"), :remote => true %>
+      <br>
+      TOTAL BALLOTS: <span id = 'defendant_vote_count'><%= Ballot.where(:role => "defendant", :case_id => @case.id).count %></span>
+    </div>
 
+
+<div class="commentsBox">
+  <% @comment = Comment.new %>
+  <%= form_for [@case, @comment], :url => case_comments_path(@case, @comment), remote: true do |f| %>
+    <%= f.label "Comment" %>
+    <%= f.text_area :body, cols: 40, rows: 7 %>
+    <%= f.submit "Submit"%>
+  <% end %>
+
+
+	<div id = "commentslist">
+	<br>
+	<% @case.comments.each do |comment| %>
+	    <p><b><%= User.find(comment.user_id).user_name %></b>: <%= comment.body %></p>
+	    <%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "like", "data-type" => "json" } %>
+	    <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "dislike", "data-type" => "json" } %>
+	    <p>Up-Votes: <span class="<%= comment.id %>up"><%= comment.votes.where(:direction => "up").count %></span>
+	    Down-Votes: <span class="<%= comment.id %>down"><%= comment.votes.where(:direction => "down").count %></span>
+	  </p>
+	  <% end %>
 	</div>
+</div>
