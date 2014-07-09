@@ -22,5 +22,3 @@ $(document).ready(function() {
       $('.dashboard-alerts').hide(500);
     })
 });
-
-
