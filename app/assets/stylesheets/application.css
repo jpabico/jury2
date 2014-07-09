@@ -181,7 +181,7 @@ background-image:url('wood.jpg');
 
 .cases_count_ribbon:before
 {
-  background-color: white;
+  background-image:url('dots.png');
   content: ' ';
   position: absolute;
   width: 20px;
