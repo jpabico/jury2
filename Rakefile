@@ -6,7 +6,7 @@ require File.expand_path('../config/application', __FILE__)
 
 IJURY::Application.load_tasks
 
-namespace :statuser do
+namespace :db do
   desc "Checks for active cases, and updates them to closed status."
   task :runupdate => :environment do
     @cases = Case.where(status: 'active')
@@ -17,10 +17,3 @@ namespace :statuser do
     end
   end
 end
-
-  namespace :events do
-    desc "Just testing"
-    task :fetch => :environment do
-      puts "From the Rakefile...HERE IS THE TIME --- #{Time.now} - Success!"
-    end
-  end
