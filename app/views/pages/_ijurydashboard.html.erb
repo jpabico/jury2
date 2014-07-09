@@ -13,34 +13,37 @@
   </div>
 
 <!-- alert -->
-	<br>
-	<div class="dashboard-alerts">
-
-		<img src="http://berksdigital.com/printers/frontend/view/image/close_icon_small.png">
+	<div id="dash_board_frame">
 		<br>
-		<span id="alert_header">Alerts</span>
-		<ul id="alert_list">
-			<% invite_count = 0 %>
-			<% @my_invites.each do |my_invite| %>
-				<% if my_invite.users[0].id != session[:id] %>
-					<li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
-					<% invite_count += 1 %>
+		<div class="dashboard-alerts">
+			<img src="http://berksdigital.com/printers/frontend/view/image/close_icon_small.png">
+			<br>
+			<span id="alert_header">Alerts</span>
+			<ul id="alert_list">
+				<% invite_count = 0 %>
+				<% @my_invites.each do |my_invite| %>
+					<% if my_invite.users[0].id != session[:id] %>
+						<li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
+						<% invite_count += 1 %>
+					<% end %>
 				<% end %>
-			<% end %>
-			<% if invite_count == 0 %>
-				<li><%= "No Alerts at the moment.  All clear!" %></li>
-			<% end %>
-		</ul>
-	</div>
+				<% if invite_count == 0 %>
+					<li><%= "No Alerts at the moment.  All clear!" %></li>
+				<% end %>
+			</ul>
+		</div>
+
 	<br>
 	<div class="cases_create">
 		<br>
-		<%= link_to "Create a new case!", new_case_path, :id => "create_case_btn"  %>
+		<%= link_to "Create a new case!", new_case_path, :remote => true, :id => "create_case_btn" %>
 		<br>
 	</div>
+</div>
 
 
 
+<!--  -->
 
 
 	<section class="cases-mycases">

@@ -1,7 +1,10 @@
 class CasesController < ApplicationController
-  # def new
-  #   @my_case = Case.new
-  # end
+  def new
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   def create
     if User.find_by_user_name(params["defendant_user_name"]) == nil
