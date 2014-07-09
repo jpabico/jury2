@@ -1,5 +1,13 @@
 	<h3>Case</h3>
 
+	<div class="countdown-timer">
+		<h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small> 
+			<%= @remaining_hours %><small>h</small> 
+			<%= @remaining_minutes %><small>m</small>
+			<%= @remaining_seconds %><small>s</small>
+		</h4>
+	</div>
+
 	<div><%= @case.title %></div>
 
 	<div><%= @case.summary %></div>
