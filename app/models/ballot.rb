@@ -3,5 +3,6 @@ class Ballot < ActiveRecord::Base
   validates :case_id, uniqueness: {scope: :user_id}
   belongs_to :user
   belongs_to :case
+  validates :user_id, presence: true
 end
 
