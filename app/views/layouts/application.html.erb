@@ -11,15 +11,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <!-- this part is a header including login logout -->
   <div id="header_top_main">
     <%= render "/layouts/ijuryheader" %>
   </div>
 
+  <!-- logo div box -->
+  <div id="logo">
+  </div>
+  <!-- this is a main box  -->
   <div id="body_middle_main">
   <%= yield %>
   <div>
-
+  <!-- this is a footer -->
   <div id="footer_bottom_main">
     <%= render "/layouts/ijuryfooter" %>
   </div>
