@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= mustache
 //= require_tree .
 $(document).ready(function() {
     $('#sign_up_trigger').on('click',function(event) {
