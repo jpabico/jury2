@@ -11,7 +11,7 @@ describe VotesController do
     @comment = Comment.new
     @comment.user_id = 1
     @comment.case_id = 1
-    @comment.content = "test"
+    @comment.body = "test"
     @comment.save
   end
 

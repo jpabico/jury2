@@ -10,6 +10,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // related to the widget.
 var widget;
 var player;
+
 function onYouTubeIframeAPIReady() {
   widget = new YT.UploadWidget('widget', {
     width: 400,
@@ -39,19 +40,3 @@ function onProcessingComplete(event) {
   });
 }
 
-// For the player to display on cases page
-var tag2 = document.createElement('script');
-tag2.src = "https://www.youtube.com/player_api";
-var firstScriptTag2 = document.getElementsByTagName('script')[0];
-firstScriptTag2.parentNode.insertBefore(tag2, firstScriptTag2);
-
-// Replace the 'ytplayer' element with an <iframe> and
-// YouTube player after the API code downloads.
-var casePlayer;
-function onYouTubePlayerAPIReady() {
-  casePlayer = new YT.Player('ytplayer', {
-    height: 390,
-    width: 640,
-    videoId: 'M7lc1UVf-VE'
-  });
-}

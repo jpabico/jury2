@@ -24,7 +24,6 @@ function bindEvents(){
     };
 
     function updateVote(e, data, status, xhr){
-      console.log(data)
       $("." + data.comment_id + "up").text(data.upvotes);
       $("." + data.coment_id + "down").text(data.downvotes);
     }

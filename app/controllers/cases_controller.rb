@@ -1,7 +1,4 @@
 class CasesController < ApplicationController
-  # def new
-  #   @my_case = Case.new
-  # end
 
   def create
     if User.find_by_user_name(params["defendant_user_name"]) == nil
@@ -15,9 +12,29 @@ class CasesController < ApplicationController
   end
 
   def show
+
     @case = Case.find(params[:id])
     session[:case_id] = params[:id]
 
+    # Countdown timer feature
+    if @case.active_end == nil
+      remaining_seconds = 0
+    else
+      remaining_seconds = @case.active_end - Time.now
+    end
+
+    if remaining_seconds <= 0
+      @remaining_days = 0
+      @remaining_hours = 0
+      @remaining_minutes = 0
+      @remaining_seconds = 0
+    else
+      @remaining_days = remaining_seconds.divmod(84000)[0]
+      @remaining_hours = remaining_seconds.divmod(84000)[1].divmod(3600)[0]
+      @remaining_minutes = remaining_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[0]
+      @remaining_seconds = remaining_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[1].to_int
+    end
+    
   end
 
 end
