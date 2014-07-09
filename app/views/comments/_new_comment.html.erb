@@ -1,7 +1,9 @@
 
 
     <p><b><%= username %></b>: <%= comment.body %></p>
-    <p><%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]) %>
-    <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]) %></p>
-    <p>Up-Votes: <%= comment.votes.where(:direction => "up").count %> ---
-    Down-Votes: <%= comment.votes.where(:direction => "down").count %></p>
+    <%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "like", "data-type" => "json" } %>
+    <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "dislike", "data-type" => "json" } %>
+    <p>    Up-Votes:<span class="<%= comment.id %>up"><%= comment.votes.where(:direction => "up").count %></span>
+    <br>
+    Down-Votes:<span class="<%= comment.id %>down"><%= comment.votes.where(:direction => "down").count %></span>
+    <br></p>
