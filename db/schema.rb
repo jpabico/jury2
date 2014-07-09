@@ -40,12 +40,11 @@ ActiveRecord::Schema.define(:version => 20140706211949) do
   end
 
   create_table "comments", :force => true do |t|
-    t.text     "content"
-    t.integer  "parent_comment_id"
+    t.text     "body"
     t.integer  "user_id"
     t.integer  "case_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "evidences", :force => true do |t|
