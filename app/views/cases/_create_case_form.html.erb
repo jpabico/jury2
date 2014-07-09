@@ -1,6 +1,7 @@
 <div id='create_case_box'>
   <span id="new_case_title">Create a New Case</span>
-  <%= form_tag cases_path do %>
+  <div id="case_form_div">
+  <%= form_tag cases_path,:id => 'create_case_form' do %>
     <%= label_tag "Title" %>
     <%= text_field_tag :title %>
     <%= label_tag "Summary" %>
@@ -10,4 +11,7 @@
 
     <%= submit_tag "Create Case" %>
   <% end %>
+  <div>
 </div>
+
+
