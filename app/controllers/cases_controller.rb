@@ -17,9 +17,13 @@ class CasesController < ApplicationController
     session[:case_id] = params[:id]
 
     # Countdown timer feature
-    remaining_seconds = @case.active_end - Time.now
+    if @case.active_end == nil
+      remaining_seconds = 0
+    else
+      remaining_seconds = @case.active_end - Time.now
+    end
 
-    if remaining_seconds <= 0 
+    if remaining_seconds <= 0
       @remaining_days = 0
       @remaining_hours = 0
       @remaining_minutes = 0
