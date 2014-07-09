@@ -5,20 +5,25 @@
 	</div>
 </div>
 <% if session[:id] %>
-	<%= button_to "log out", session_path(session[:id]), method: :delete, redirect_to: "/" %>
-  <h3>Dashboard for <%= User.find(session[:id]).user_name %></h3>
+<!-- 	<div id="active_cases_header">
+		<span class="cases_ribbon">&nbsp; M y &nbsp;&nbsp;&nbsp; C a s e s</span>
+	</div> -->
+	<div id="active_cases_header">
+  	<span class="cases_ribbon">&nbsp; D a s h b o a r d &nbsp;&nbsp;&nbsp; f o r &nbsp;&nbsp;&nbsp; "<%= User.find(session[:id]).user_name %>"</span>
+  </div>
 
-	<section class="dashboard-alerts">
-		<h3>Alerts</h3>
-		<ul>
+<!-- alert -->
+	<br>
+	<div class="dashboard-alerts">
+
+		<img src="http://berksdigital.com/printers/frontend/view/image/close_icon_small.png">
+		<br>
+		<span id="alert_header">Alerts</span>
+		<ul id="alert_list">
 			<% invite_count = 0 %>
 			<% @my_invites.each do |my_invite| %>
 				<% if my_invite.users[0].id != session[:id] %>
-
-
 					<li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
-
-
 					<% invite_count += 1 %>
 				<% end %>
 			<% end %>
@@ -26,27 +31,36 @@
 				<li><%= "No Alerts at the moment.  All clear!" %></li>
 			<% end %>
 		</ul>
-	</section>
+	</div>
+	<br>
+	<div class="cases_create">
+		<span id="create_slogan">Want to Create a new case?</span><br>
+		<%= link_to "Start Here!", new_case_path, :id => "create_case_btn"  %>
+	</div>
 
-	<section class="cases-create">
-	<h3>Create new case</h3>
-	<%= link_to "Create a Case", new_case_path %>
-	</section>
+
+
+
 
 	<section class="cases-mycases">
+<!-- this is when user is logged in -->
+	<div id="active_cases_header">
+		<span class="cases_ribbon">&nbsp; M y &nbsp;&nbsp;&nbsp; C a s e s</span>
+	</div>
+	<br>
+	<span class="cases_count_ribbon">Total <%= @my_cases.count  %> my cases</span>
 
-	<h3>My Cases</h3>
-	<h5>Total <%= @my_cases.count  %> my cases</h5>
-
-		<% @my_cases.each do |my_case| %>
-			<ul>
-		  	<li><a href="/cases/<%= my_case.id %>"><%= my_case.title  %></a></li>
-		  	<li><%= my_case.users[0].user_name %> v. <%= my_case.users[1].user_name %></li>
-
-	 		 	<li><%= my_case.status %></li>
-	 		</ul>
-		<% end  %>
+		<ul class="case_list_container">
+			<% @my_cases.each do |my_case| %>
+	  		<li class="case_list_item">
+		  		<a href="/cases/<%= my_case.id %>"><span class="case_title_list"><%= my_case.title  %></span></a><br>
+		  		<span class="case_names_list">&nbsp;<%= my_case.users[0].user_name %> v. <%= my_case.users[1].user_name %></span><br>
+	 		 		<span class="case_status_list">Status: <strong><%= my_case.status %></strong></span>
+	 			</li>
+			<% end  %>
+	 	</ul>
 	</section>
+
 
 <% end %>
  <!-- if user is not logged in this page is at the top -->
@@ -58,28 +72,32 @@
 <span class="cases_count_ribbon">Total <%= @active_cases.count %> active cases
 </span>
 
-	<% @active_cases.each do |active_case| %>
-		<ul>
-  		<li><a href="/cases/<%= active_case.id %>"><%= active_case.title  %></a></li>
-			<li><%= active_case.users[0].user_name %> v. <%= active_case.users[1].user_name %></li>
-		</ul>
-	<% end  %>
+	<ul class="case_list_container">
+		<% @active_cases.each do |active_case| %>
+	  		<li class="case_list_item">
+	  			<a href="/cases/<%= active_case.id %>"><span class="case_title_list"><%= active_case.title  %></span></a><br>
+					<span class="case_names_list"><%= active_case.users[0].user_name %> v. <%= active_case.users[1].user_name %></span>
+				</li>
+		<% end  %>
+	</ul>
 </section>
 
 <section class="cases-showclosed">
 <div id="active_cases_header">
-	<span class="cases_ribbon">&nbsp;All &nbsp;&nbsp;&nbsp; Closed &nbsp;&nbsp;&nbsp; Cases</span>
+	<span class="cases_ribbon">&nbsp;A l l &nbsp;&nbsp;&nbsp; C l o s e d &nbsp;&nbsp;&nbsp; C a s e s</span>
 </div>
 <br>
 <span class="cases_count_ribbon">Total <%= @closed_cases.count  %> closed cases
 </span>
 
-	<% @closed_cases.each do |closed_case| %>
-		<ul>
-  		<li><a href="/cases/<%= closed_case.id %>"><%= closed_case.title  %></a></li>
-  		<li><%= closed_case.users[0].user_name %> v. <%= closed_case.users[1].user_name %></li>
+	<ul class="case_list_container">
+		<% @closed_cases.each do |closed_case| %>
+	  		<li class="case_list_item">
+	  			<a href="/cases/<%= closed_case.id %>"><span class="case_title_list"><%= closed_case.title %></span></a><br>
+	  			<span class="case_names_list"><%= closed_case.users[0].user_name %> v. <%= closed_case.users[1].user_name %></span>
+	  		</li>
+		<% end %>
+	</ul>
 
-		</ul>
-	<% end  %>
 
 </section>

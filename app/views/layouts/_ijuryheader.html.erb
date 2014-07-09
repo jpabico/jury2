@@ -8,12 +8,17 @@
     </div>
   </div>
   <div id="header_right">
-    <div id="sign_in">
-      <%= render :partial => '/sessions/sign_in', :locals => {:user => @user} %>
-    </div>
-    <div id="sign_up_trigger">
-      <a href="" id="su_trigger">New User? Sign Up</a>
-    </div>
+    <% if session[:id] %>
+      <span id="welcome_msg">Welcome <%= User.find(session[:id]).user_name %>!</span>
+      <%= button_to "log out", session_path(session[:id]), method: :delete, redirect_to: "/" %>
+    <% else %>
+      <div id="sign_in">
+        <%= render :partial => '/sessions/sign_in', :locals => {:user => @user} %>
+      </div>
+      <div id="sign_up_trigger">
+        <a href="" id="su_trigger">New User? Sign Up</a>
+      </div>
+    <% end %>
 
       <div id="sign_up_box">
         <%= render :partial => '/users/sign_up', :locals => {:user => @user} %>

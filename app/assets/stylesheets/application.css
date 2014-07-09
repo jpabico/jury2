@@ -21,6 +21,11 @@
   background-color: black;
   float:right;
 }*/
+
+
+
+
+
 body {
   width: 100%;
   -webkit-box-shadow: 0px 2px 1px 0px rgba(50, 50, 50, 0.75);
@@ -128,7 +133,7 @@ font-family: 'Roboto Condensed', sans-serif;
   /*background-position: right 20px center;*/
   /*background-repeat:no-repeat;*/
   /*background-size: 80px 60px;*/
-  background-color: #B6B6B8;
+background-image:url('wood.jpg');
 }
 
 #main_logo {
@@ -188,3 +193,161 @@ font-family: 'Roboto Condensed', sans-serif;
   -ms-transform:rotate(45deg);
   -webkit-transform:rotate(45deg);
 }
+
+/* Dashboard for users */
+
+#welcome_msg {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+.case_list_container {
+  list-style-type: none;
+  margin-left: -2.5em;
+}
+
+
+.case_list_item {
+  border:1px solid #666666;
+  border-radius: 10px;
+
+}
+
+.case_list_item:nth-child(odd) {
+  background-color: #D09B9E;
+}
+.case_list_item:nth-child(even) {
+  background-color: #FFF4E7;
+}
+
+.case_title_list {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 28px;
+}
+
+.case_names_list {
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+}
+
+.case_status_list {
+  font-family: 'Cantarell', sans-serif;
+}
+
+
+.case_list_item a {
+  color:white;
+  text-decoration: none;
+  text-shadow: 3px 3px 0px rgba(150, 150, 150, 1);
+}
+
+.case_list_item a:visited {
+  text-decoration: none;
+  color:white;
+}
+
+.case_list_item a:hover {
+  color:red;
+}
+
+.dashboard-alerts {
+  background: #ffee05; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffee05 15%, #d6d2cd 15%, #ffee05 15%, #d6d2cd 15%, #d6d2cd 15%, #d6d2cd 45%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,#ffee05), color-stop(15%,#d6d2cd), color-stop(15%,#ffee05), color-stop(15%,#d6d2cd), color-stop(15%,#d6d2cd), color-stop(45%,#d6d2cd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffee05 15%,#d6d2cd 15%,#ffee05 15%,#d6d2cd 15%,#d6d2cd 15%,#d6d2cd 45%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffee05 15%,#d6d2cd 15%,#ffee05 15%,#d6d2cd 15%,#d6d2cd 15%,#d6d2cd 45%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffee05 15%,#d6d2cd 15%,#ffee05 15%,#d6d2cd 15%,#d6d2cd 15%,#d6d2cd 45%); /* IE10+ */
+  background: linear-gradient(to bottom, #ffee05 15%,#d6d2cd 15%,#ffee05 15%,#d6d2cd 15%,#d6d2cd 15%,#d6d2cd 45%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffee05', endColorstr='#d6d2cd',GradientType=0 ); /* IE6-9 */
+  background-color: yellow;
+  width: 18em;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+#alert_header {
+  font-size: 18px;
+  font-weight: lighter;
+  font-family: 'Noto Sans', sans-serif;
+  color: #666666;
+  margin-left: 5px;
+}
+
+.dashboard-alerts img {
+  width: 8px;
+  height: 8px;
+  float:right;
+  margin-right: 20px;
+  margin-top: 2px;
+}
+
+#alert_list li{
+  list-style-type: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+#create_slogan {
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+#create_case_btn {
+  margin-bottom: 5px;
+  -moz-box-shadow:inset 0px 1px 8px -1px #caefab;
+  -webkit-box-shadow:inset 0px 1px 8px -1px #caefab;
+  box-shadow:inset 0px 1px 8px -1px #caefab;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811) );
+  background:-moz-linear-gradient( center top, #77d42a 5%, #5cb811 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811');
+  background-color:#77d42a;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  text-indent:0;
+  border:1px solid #268a16;
+  display:inline-block;
+  color:#37571c;
+  font-family:Verdana;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:40px;
+  line-height:40px;
+  width:100px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #aade7c;
+}
+#create_case_btn:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
+  background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a');
+  background-color:#5cb811;
+}
+#create_case_btn:active {
+  position:relative;
+  top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */

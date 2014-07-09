@@ -18,6 +18,7 @@ $(document).ready(function() {
         event.preventDefault();
         $('#sign_up_box').toggle();
     });
+    $('.dashboard-alerts img').on('click',function(event){
+      $('.dashboard-alerts').hide(500);
+    })
 });
-
-

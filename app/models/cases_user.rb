@@ -3,4 +3,11 @@ class CasesUser < ActiveRecord::Base
   has_one :evidence
   belongs_to :user
   belongs_to :case
+  before_save :make_sure_user_exists
+
+  def make_sure_user_exists
+    if User.all.map{|x|x.id}.include?(self.user_id)
+      return
+    end
+  end
 end
