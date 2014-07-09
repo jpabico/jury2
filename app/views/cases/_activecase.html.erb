@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="vote-plaintiff">
-  		<%= button_to "Vote", ballots_path(role: "plaintiff", case_id: @case.id) %>
+  		<%= button_to "Vote", case_ballots_path(role: "plaintiff", case_id: @case.id) %>
       <%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %>
 		</div>
 
@@ -39,7 +39,7 @@
 
 
 		<div class="vote-defendant">
-    	<%= button_to "Vote", ballots_path(role: "defendant", case_id: @case.id) %>
+    	<%= button_to "Vote", case_ballots_path(role: "defendant", case_id: @case.id) %>
     	<%= Ballot.where(:role => "defendant", :case_id => @case.id).count %>
 		</div>
 
