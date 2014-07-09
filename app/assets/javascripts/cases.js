@@ -13,6 +13,7 @@ function bindEvents(){
 }
     function addComment(e, data, status, xhr){
       $('.commentsBox').append(data);
+      $('#comment_body').val('');
     };
 
     function addPlaintiff(e, data, status, xhr){
@@ -25,7 +26,7 @@ function bindEvents(){
 
     function updateVote(e, data, status, xhr){
       $("." + data.comment_id + "up").text(data.upvotes);
-      $("." + data.coment_id + "down").text(data.downvotes);
+      $("." + data.comment_id + "down").text(data.downvotes);
     }
 
     function wtf(){

@@ -1,8 +1,8 @@
 	<h3>Case</h3>
 
 	<div class="countdown-timer">
-		<h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small> 
-			<%= @remaining_hours %><small>h</small> 
+		<h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small>
+			<%= @remaining_hours %><small>h</small>
 			<%= @remaining_minutes %><small>m</small>
 			<%= @remaining_seconds %><small>s</small>
 		</h4>
@@ -69,8 +69,8 @@
 	    <p><b><%= User.find(comment.user_id).user_name %></b>: <%= comment.body %></p>
 	    <%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "like", "data-type" => "json" } %>
 	    <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "dislike", "data-type" => "json" } %>
-	    <p>Up-Votes: <span class="<%= comment.id %>up"><%= comment.votes.where(:direction => "up").count %></span>
-	    Down-Votes: <span class="<%= comment.id %>down"><%= comment.votes.where(:direction => "down").count %></span>
+	    <p>Likes: <span class="<%= comment.id %>up"><%= comment.votes.where(:direction => "up").count %></span>
+	    Dislikes: <span class="<%= comment.id %>down"><%= comment.votes.where(:direction => "down").count %></span>
 	  </p>
 	  <% end %>
 	</div>
