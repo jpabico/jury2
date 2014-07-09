@@ -1,7 +1,0 @@
-    <%= comment.body %> - <%= User.find(comment.user_id).user_name %>
-    <%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]) %>
-    <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]) %>
-    Up-Votes:<%= comment.votes.where(:direction => "up").count %>
-    <br>
-    Down-Votes:<%= comment.votes.where(:direction => "down").count %>
-    <br>
