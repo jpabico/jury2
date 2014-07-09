@@ -18,7 +18,7 @@ Comment.create(content:"Yes he is", user_id:1,case_id:1)
 Comment.create(content:"Oh come on guys.  The real question is whether he is black or white", user_id:3,case_id:1)
 Comment.create(content:"Point taken.", user_id:5,case_id:1)
 Comment.create(content:"We shouldn't be talking about MJ.  Time to open a case for Teenage Mutant Ninja Turtles!", user_id:4,case_id:1)
-# basher v. papajons 
+# basher v. papajons
 Case.create(title: "You are NOT a supermodel", summary: "Pabico thinks he's so sexy, but not so much says I.  Like seriously.", status: "active")
 CasesUser.create(case_id: 2, user_id: 4, party: "plaintiff")
 CasesUser.create(case_id: 2, user_id: 3, party: "defendant")
@@ -79,5 +79,4 @@ Case.create(title: "Spiderman is stronger than Batman!", summary: "Spiderman is 
 CasesUser.create(case_id: 11, user_id: 2, party: "plaintiff")
 CasesUser.create(case_id: 11, user_id: 1, party: "defendant")
 Evidence.create(argument: "Look, spider man is a beast.", video_url: "iV4LjkPo5xY", cases_user_id: 21)
-
 
