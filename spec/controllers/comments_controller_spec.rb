@@ -1,32 +1,46 @@
 require 'spec_helper'
 
 describe CommentsController do
-  before(:each) do
-    @user = User.new
-    @user.user_name = "bob"
-    @user.email = "bob@bob.com"
-    @user.password_hash = "test"
-
-    @case = Case.new
-    @case.title = "title"
-    @case.summary = "summary"
-    @case.status = "active"
-    @case.winner = "bob"
-    @case.save
-  end
 
   describe 'POST #create' do
+
     context 'given valid attributes' do
       it 'saves the new comment in the database' do
         expect{
-          @comment = Comment.new
-          @comment.user_id = 1
-          @comment.case_id = 1
-          @comment.body = "test"
-          @comment.save
+          @comment = Comment.create!({
+          user_id: 1,
+          case_id: 1,
+          body: "test"
+          })
         }.to change(Comment, :count).by(1)
       end
     end
   end
+
+    context "given a session id" do
+      it "renders partial new_comment" do
+        expect {
+          session[:id] = 123
+          post :create, {
+            comment: { body: "text" },
+            case_id: 1
+          }
+        }.to render_template(partial: "new_comment",
+                            locals: { comment: "test",
+                            username: "test" })
+      end
+    end
+
+    context "given no session id" do
+      it "renders status 404" do
+        expect {
+          session[:id] = nil
+          post :create, {
+            comment: { body: "text" },
+            case_id: 1
+          }
+        }.to render_template(json: { status: 404 })
+      end
+    end
 
 end
