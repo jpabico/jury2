@@ -6,13 +6,13 @@ function bindEvents(){
 
   $('.vote-defendant').on("ajax:success", addDefendant)
   $('.vote-plaintiff').on("ajax:success",addPlaintiff)
-  $('.commentsBox').on("ajax:success", addComment)
-  $('.commentsBox').on('ajax:success', '#like', updateVote)
-  $('.commentsBox').on('ajax:success', '#dislike', updateVote)
+  $(document).on("ajax:success", addComment)
+  $(document).on('ajax:success', '#like', updateVote)
+  $(document).on('ajax:success', '#dislike', updateVote)
   // $(document).on('ajax:error', '#dislike', wtf)
 }
     function addComment(e, data, status, xhr){
-      $('.commentsBox').append(data);
+      $('#commentslist').append(data);
       $('#comment_body').val('');
     };
 
