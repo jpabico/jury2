@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fence-lizards-2014/Jury.svg?branch=master)](https://travis-ci.org/fence-lizards-2014/Jury)
+
 #Jury
 ====
 

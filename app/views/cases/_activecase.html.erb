@@ -1,4 +1,8 @@
-	<h3>Case</h3>
+<div id="case_heading">
+  <h3><div class="case_title"> Case: <%= @case.title %></div></h3>
+
+  <p><div class="case_summary"><%= @case.summary %></div></p>
+</div>
 
 	<div class="countdown-timer">
 		<h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small>
@@ -8,16 +12,15 @@
 		</h4>
 	</div>
 
-	<div><%= @case.title %></div>
-
-	<div><%= @case.summary %></div>
+<div class="both_people">
 
 	<div class="person1">
 
-		PLAINTIFF: <%= @case.users[0].user_name %>
+		<p>PLAINTIFF: <%= @case.users[0].user_name %></p>
 
 		<div class="argumentText1">
-			PLAINTIFF's ARGUMENT: <%= @case.cases_users[0].evidence.argument %>
+			<h3>PLAINTIFF's ARGUMENT</h3>
+      <p><%= @case.cases_users[0].evidence.argument %></p>
 		</div>
 
 		<div class="video1">
@@ -26,8 +29,8 @@
 		</div>
 
 		<div class="vote-plaintiff">
-  		<%= button_to "Vote", case_ballots_path(role: "plaintiff", case_id: @case.id), :remote => true %>
-  		<br>
+  		<div class="vote-plaintiff-button">Vote for the plaintiff!<%= button_to "Vote", case_ballots_path(role: "plaintiff", case_id: @case.id), :remote => true %></div>
+
       TOTAL BALLOTS: <span id = 'plaintiff_vote_count'><%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %></span>
 		</div>
 
@@ -35,11 +38,12 @@
 
 	<div class="person2">
 
-		DEFENDANT:<%= @case.users[1].user_name %>
+		<p>DEFENDANT:<%= @case.users[1].user_name %></p>
 
 		<div class="argumentText2">
-			DEFENDANT'S ARGUMENT: <%= @case.cases_users[1].evidence.argument %>
-		</div>
+      <h3> Defendant's Argument </h3>
+      <p><%= @case.cases_users[1].evidence.argument %></p>
+    </div>
 
 		<div class="video2">
 			<iframe id="ytplayer" type="text/html" width="420" height="237" src="http://www.youtube.com/embed/<%= @case.cases_users[1].evidence.video_url %>" frameborder="0" allowfullscreen>
@@ -48,10 +52,11 @@
 
 
     <div class="vote-defendant">
-      <%= button_to "Vote", case_ballots_path(case_id: @case.id, role: "defendant"), :remote => true %>
-      <br>
+      <div class="vote-defendant-button">Vote for the defendant!<%= button_to "Vote", case_ballots_path(case_id: @case.id, role: "defendant"), :remote => true %></div>
+
       TOTAL BALLOTS: <span id = 'defendant_vote_count'><%= Ballot.where(:role => "defendant", :case_id => @case.id).count %></span>
     </div>
+    <br/>
 
 
 <div class="commentsBox">
