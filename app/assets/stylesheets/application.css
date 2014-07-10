@@ -248,14 +248,14 @@ body {
 }
 
 .case_title_list {
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 28px;
-
+  font-family: 'Arvo', serif;
+  font-size: 16px;
+  color:black;
 }
 
 .case_names_list {
-  font-family: 'Lobster', cursive;
-  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
 }
 
 .case_status_list {
@@ -264,9 +264,8 @@ body {
 
 
 .case_list_item a {
-  color:#E0E0E0;
   text-decoration: none;
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  text-shadow: 2px 2px 0px #E0E0E0;
 }
 
 .case_list_item a:visited {
@@ -474,30 +473,30 @@ body {
 }
 
 .case_title {
-font-weight: bold;
-text-align: center;
-font-size: 25px;
-color: black;
-width: 92%;
-padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+  color: black;
+  width: 92%;
+  padding: 10px;
 
-display: block;
-    height: 30px;
-    line-height: 1.3;
-    width: 510px;
-    margin: 0 auto;
-    padding: 5px 10px;
-    position: relative;
-    left: -16px;
-    top: 8px;
-    color: #cfcfcf;
-    text-shadow: 0 1px 1px #111;
-    border-top: 1px solid #363636;
-    border-bottom: 1px solid #202020;
-    background: #333;
-    background: linear-gradient(top, #383838 0%, #262626 100%);
-    border-radius: 2px 2px 0 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  display: block;
+  height: 30px;
+  line-height: 1.3;
+  width: 510px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  position: relative;
+  left: -16px;
+  top: 8px;
+  color: #cfcfcf;
+  text-shadow: 0 1px 1px #111;
+  border-top: 1px solid #363636;
+  border-bottom: 1px solid #202020;
+  background: #333;
+  background: linear-gradient(top, #383838 0%, #262626 100%);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .case_summary {

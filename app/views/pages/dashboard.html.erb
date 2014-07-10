@@ -5,12 +5,6 @@
   </div> -->
 
 
-<!-- alert -->
-
-
-
-
-<!--  -->
 
 
   <section class="cases-mycases">
@@ -37,8 +31,10 @@
  <!-- if user is not logged in this page is at the top -->
 <section class="cases-showactive">
 <div id="active_cases_header">
+  <center>
   <span class="cases_ribbon">&nbsp;A l l &nbsp;&nbsp;&nbsp; A c t i v e &nbsp;&nbsp;&nbsp; C a s e s</span>
 </div>
+</center>
 <br>
 <span class="cases_count_ribbon">Total <%= @active_cases.count %> active cases
 </span>
@@ -55,7 +51,9 @@
 
 <section class="cases-showclosed">
 <div id="active_cases_header">
+  <center>
   <span class="cases_ribbon">&nbsp;A l l &nbsp;&nbsp;&nbsp; C l o s e d &nbsp;&nbsp;&nbsp; C a s e s</span>
+</center>
 </div>
 <br>
 <span class="cases_count_ribbon">Total <%= @closed_cases.count  %> closed cases
