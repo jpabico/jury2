@@ -28,15 +28,17 @@ class EvidencesController < ApplicationController
 
       redirect_to dashboard_path
     else
+      cases_user = CasesUser.find_by_user_id_and_case_id(session[:id], params[:case_id])
+
       @evidence = Evidence.create!({
         argument: params["argument"],
         video_url: params["video_url"],
         photo_url: params["photo_url"],
-        cases_user_id: CasesUser.where(user_id: session[:id]).where(case_id: params[:case_id]).first.id
+        cases_user_id: cases_user.id
       })
 
-      Case.update(params[:case_id], status: "active")
-      Case.update(params[:case_id], active_start: Time.now)
+      kase = Case.find(params[:case_id])
+      kase.update_attributes!(status: "active", active_start: Time.now)
 
       redirect_to dashboard_path
 
