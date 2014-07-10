@@ -18,13 +18,15 @@ describe VotesController do
   describe 'POST #create' do
     context 'given valid attributes' do
       it 'saves the vote to the databse' do
-        expect{
-          @vote = Vote.new
-          @vote.comment_id = 1
-          @vote.user_id = 1
-          @vote.direction = 'up'
-          @vote.save
-        }.to change(Vote, :count).by(1)
+        post :create, {
+          comment_id: 1,
+          user_id: 1,
+          direction: "up"
+        }
+        vote = Vote.last
+        expect(vote.user_id).to eq(1)
+        expect(vote.comment_id).to eq(1)
+        expect(vote.direction).to eq("up")
       end
     end
   end
