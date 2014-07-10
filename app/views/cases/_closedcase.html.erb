@@ -4,7 +4,16 @@
 		PLAINTIFF: <%= @case.users[0].user_name %> had <%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %> votes
 		<br>
    	DEFENDANT:<%= @case.users[1].user_name %> had <%= Ballot.where(:role => "defendant", :case_id => @case.id).count %> votes
-	</div>		
+
+   	<% if ((Ballot.where(:role => "plaintiff", :case_id => @case.id).count) > (Ballot.where(:role => "defendant", :case_id => @case.id).count))%>
+   		<p>PLAINTIFF WINS!</p>
+ 		<% elsif((Ballot.where(:role => "plaintiff", :case_id => @case.id).count) < (Ballot.where(:role => "defendant", :case_id => @case.id).count))%>
+ 			<p>DEFENDANT WINS!</p>
+ 		<% else %>
+   		<p>IT'S A TIE!</p>
+   	<% end %>
+
+	</div>
 
 	<h3>Case Details</h3>
 
@@ -38,6 +47,14 @@
 			<iframe id="ytplayer" type="text/html" width="420" height="237" src="http://www.youtube.com/embed/<%= @case.cases_users[1].evidence.video_url %>" frameborder="0" allowfullscreen>
 			</iframe>
 		</div>
-
-
+	<div id = "commentslist">
+		<br>
+		<% @case.comments.each do |comment| %>
+		    <p><b><%= User.find(comment.user_id).user_name %></b>: <%= comment.body %></p>
+		    <p>
+		    Up-Votes: <%= comment.votes.where(:direction => "up").count %> -
+		    Down-Votes: <%= comment.votes.where(:direction => "down").count %>
+		  </p>
+		  <% end %>
 	</div>
+</div>

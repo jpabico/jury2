@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20140706211949) do
     t.string   "status",       :default => "pending"
     t.string   "winner"
     t.datetime "active_start"
+    t.datetime "active_end"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
   end

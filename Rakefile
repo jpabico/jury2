@@ -11,9 +11,8 @@ namespace :db do
   task :runupdate => :environment do
     @cases = Case.where(status: 'active')
     @cases.each do |item|
-      if Time.now - item.active_start > 3
-        Case.update(item.id, status: "closed")
-      end
+    	remaining_seconds = item.active_end - Time.now
+      Case.update(item.id, status: "closed") if remaining_seconds <= 0 && remaining_seconds != nil
     end
   end
 end

@@ -27,11 +27,6 @@ describe BallotsController do
           @ballot.save
         }.to change(Ballot, :count).by(1)
       end
-      it "redirects to the home page" do
-        request.env['HTTP_REFERER'] = '/cases/1'
-        post :create, user: FactoryGirl.attributes_for(:user)
-        expect(response).to redirect_to '/cases/1'
-      end
     end
   end
 end

@@ -22,7 +22,7 @@ describe CommentsController do
           @comment = Comment.new
           @comment.user_id = 1
           @comment.case_id = 1
-          @comment.content = "test"
+          @comment.body = "test"
           @comment.save
         }.to change(Comment, :count).by(1)
       end
