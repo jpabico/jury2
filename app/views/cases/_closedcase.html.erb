@@ -1,3 +1,4 @@
+<div class="cases_show_main_body">
 	<div id="case_heading">
 		<h2>CASE DISMISSED!</h2>
 
@@ -17,9 +18,11 @@
 
 
 
-	<h3>Case Details</h3>
+	<div id="case_details">C a s e &nbsp; D e t a i l s</div>
+	<center>
+			<h3><%= @case.title %></h3>
+	</center>
 
-	<div><%= @case.title %></div>
 
 <div class="both_people">
 
@@ -65,4 +68,8 @@
 		  </p>
 		  <% end %>
 	</div>
+</div>
+
+
+<!-- cases show main body -->
 </div>

@@ -453,6 +453,7 @@ body {
 
 #case_heading{
   margin: auto;
+  text-align: center;
 }
 
 .countdown-timer{
@@ -478,7 +479,7 @@ padding: 10px;
   margin: auto;
 }
 
-.bothPeople {
+.both_people {
   background-color: red;
 }
 
@@ -546,7 +547,7 @@ iframe {
 }
 
 .commentsBox {
-  width: 500px;
+  width: 300px;
   margin: auto;
   display: block;
   color: black;
@@ -571,4 +572,13 @@ p {
 
 #commentslist{
 
+}
+
+#case_details {
+  background-color: black;
+  font-size: 20px;
+  color:white;
+  font-weight: lighter;
+  font-family: 'Lato', sans-serif;
+  clear:both;
 }
