@@ -8,7 +8,7 @@
   text_field_tag :photo_url %>
   -->
     <% if current_user %>
-
+    <center>
       <div class="google-auth">
         Signed in to Google as <strong><%= current_user.name %></strong>!<br>
         <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
@@ -28,7 +28,7 @@
 
     <% end %>
 
-    <%= label_tag "Argument" %>
+    <p>Argument</p>
     <%= text_area_tag :argument %>
     <%= hidden_field_tag :case_id, params[:id] %>
     <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
@@ -36,5 +36,5 @@
     <%= submit_tag "Submit Argument" %>
   </end>
   <% end %>
-
+</center>
 </div>

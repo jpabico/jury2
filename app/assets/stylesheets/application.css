@@ -17,7 +17,7 @@
 }
 
 #new_evidence_form {
-    width: 450px;
+    width: 500px;
     height: auto;
     margin: 10px auto;
     padding: 0 10px 0 10px;
@@ -38,7 +38,7 @@
    display: block;
     height: 30px;
     line-height: 1.3;
-    width: 460px;
+    width: 510px;
     margin: 0 auto;
     padding: 5px 10px;
     position: relative;
@@ -387,7 +387,7 @@ body {
 }
 
 #create_case_box {
-  height: 250px;
+  height: auto;
   width: 350px;
   margin: 20px auto;
   padding: 0 10px 0;
@@ -425,11 +425,18 @@ body {
 }
 
 #create_case_form input {
-  margin-top: 5px;
-  margin-bottom: 7px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 200px;
+}
+
+#create_case_form textarea {
+  width:200px;
+  height: 60px;
 }
 
 #case_form_div {
+  margin: 0 auto 0 75px;
   margin-top: 20px;
   width: 145px;
   /*margin: 20px auto 0 auto;*/
@@ -550,4 +557,6 @@ iframe {
 .commentslist {
   color: white;
 }
+
+
 

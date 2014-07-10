@@ -23,13 +23,14 @@ function onYouTubeIframeAPIReady() {
 
 // 4. This function is called when a video has been successfully uploaded.
 function onUploadSuccess(event) {
-  alert('Video ID ' + event.data.videoId + ' was uploaded and is currently being processed.');
-  $('#video-status').text('Video is processing... wait for it...')
+  // alert('Video ID ' + event.data.videoId + ' was uploaded and is currently being processed.');
+  $('#widget').hide(400);
+  $('#video-status').html("<img src='http://www.trendystuffhere.com/img/loading.gif' id='loading_gif'>");
+
 }
 
 // 5. This function is called when a video has been successfully processed.
 function onProcessingComplete(event) {
-  $('#widget').hide();
   $('#video_url').val(event.data.videoId);
   $('#video-status').text('Time for a preview!')
   player = new YT.Player('player', {
