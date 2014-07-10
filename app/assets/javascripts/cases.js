@@ -17,11 +17,11 @@ function bindEvents(){
     };
 
     function addPlaintiff(e, data, status, xhr){
-      $("#plaintiff_vote_count").text(data);
+      $("#plaintiff_vote_count").text(data.myresult);
     };
 
     function addDefendant(e, data, status, xhr){
-      $("#defendant_vote_count").text(data);
+      $("#defendant_vote_count").text(data.myresult);
     };
 
     function updateVote(e, data, status, xhr){
