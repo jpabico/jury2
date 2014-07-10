@@ -74,7 +74,7 @@ body {
 
 #footer_bottom_main {
   background-color: #E3E3E3;
-  float:bottom;
+  clear:both;
 }
 
 
@@ -449,20 +449,22 @@ body {
 /**************       the cases/show page          *************/
 /***************************************************************/
 /***************************************************************/
-/*
+
 
 #case_heading{
-  background-image:url('http://newevolutiondesigns.com/images/freebies/texture-wallpaper-18.jpg');
   margin: auto;
 }
 
-
+.countdown-timer{
+  margin: 0 auto;
+  width: 250px;
+}
 
 .case_title {
 font-weight: bold;
 text-align: center;
 font-size: 30px;
-color: white;
+color: black;
 width: 92%;
 padding: 10px;
 }
@@ -470,23 +472,22 @@ padding: 10px;
 .case_summary {
   text-align: center;
   font-size: 20px;
-  color: white;
+  color: black;
   width: 92%;
   display: block;
   margin: auto;
 }
 
 .bothPeople {
-  margin: auto;
+  background-color: red;
 }
 
 .person1 {
   height: 525px;
-  color: white;
+  color: black;
   width: 46%;
   float: left;
   margin: auto 5px;
-  border: blue solid;
 }
 
 .person1 p {
@@ -495,11 +496,10 @@ padding: 10px;
 
 .person2 {
   height: 525px;
-  color: white;
+  color: black;
   width: 46%;
-  float: left;
+  float: right;
   margin: auto 5px;
-  border: red solid;
 }
 
 .person2 p {
@@ -546,13 +546,29 @@ iframe {
 }
 
 .commentsBox {
-  float: clear;
   width: 500px;
   margin: auto;
   display: block;
-  color: white;
+  color: black;
+  clear:both;
 }
 
-.commentslist {
-  color: white;
-}*/
+p {
+  color:black;
+
+}
+
+
+
+#comment_section {
+  background-color: #EFEFF2;
+}
+
+.comments_bundle {
+  display: inline;
+  clear:both;
+}
+
+#commentslist{
+
+}

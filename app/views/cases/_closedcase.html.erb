@@ -1,4 +1,4 @@
-	<div class="closedcase-message">
+	<div id="case_heading">
 		<h2>CASE DISMISSED!</h2>
 
 		PLAINTIFF: <%= @case.users[0].user_name %> had <%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %> votes
@@ -15,9 +15,13 @@
 
 	</div>
 
+
+
 	<h3>Case Details</h3>
 
 	<div><%= @case.title %></div>
+
+<div class="both_people">
 
 	<div class="person1">
 
@@ -47,6 +51,10 @@
 			<iframe id="ytplayer" type="text/html" width="420" height="237" src="http://www.youtube.com/embed/<%= @case.cases_users[1].evidence.video_url %>" frameborder="0" allowfullscreen>
 			</iframe>
 		</div>
+	</div>
+</div>
+<div id="comment_section">
+
 	<div id = "commentslist">
 		<br>
 		<% @case.comments.each do |comment| %>

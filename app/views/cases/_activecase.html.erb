@@ -4,13 +4,13 @@
   <p><div class="case_summary"><%= @case.summary %></div></p>
 </div>
 
-	<div class="countdown-timer">
-		<h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small>
-			<%= @remaining_hours %><small>h</small>
-			<%= @remaining_minutes %><small>m</small>
-			<%= @remaining_seconds %><small>s</small>
-		</h4>
-	</div>
+<div class="countdown-timer">
+	<h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small>
+		<%= @remaining_hours %><small>h</small>
+		<%= @remaining_minutes %><small>m</small>
+		<%= @remaining_seconds %><small>s</small>
+	</h4>
+</div>
 
 <div class="both_people">
 
@@ -59,6 +59,16 @@
     <br/>
 
 
+
+
+
+
+<!-- for person 2 -->
+</div>
+<!-- for both people -->
+</div>
+
+<div id="comment_section">
 <div class="commentsBox">
   <% @comment = Comment.new %>
   <%= form_for [@case, @comment], :url => case_comments_path(@case, @comment), remote: true do |f| %>
@@ -66,17 +76,20 @@
     <%= f.text_area :body, cols: 40, rows: 7 %>
     <%= f.submit "Submit"%>
   <% end %>
+  <!-- closes box -->
+</div>
 
-
-	<div id = "commentslist">
+	<div id ="commentslist">
 	<br>
-	<% @case.comments.each do |comment| %>
+  <% @case.comments.each do |comment| %>
+      <div class="comments_bundle">
 	    <p><b><%= User.find(comment.user_id).user_name %></b>: <%= comment.body %></p>
 	    <%= button_to "Like", votes_path(direction: "up", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "like", "data-type" => "json" } %>
 	    <%= button_to "Dislike", votes_path(direction: "down", comment_id: comment.id, user_id: session[:id]), remote: true, :form => { :id => "dislike", "data-type" => "json" } %>
 	    <p>Likes: <span class="<%= comment.id %>up"><%= comment.votes.where(:direction => "up").count %></span>
 	    Dislikes: <span class="<%= comment.id %>down"><%= comment.votes.where(:direction => "down").count %></span>
 	  </p>
-	  <% end %>
-	</div>
+    </div>
+    <% end %>
+  </div>
 </div>
