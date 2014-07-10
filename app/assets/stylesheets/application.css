@@ -352,3 +352,121 @@ background-image:url('wood.jpg');
 
 }
 /* This button was generated using CSSButtonGenerator.com */
+
+
+/***************************************************************/
+/***************************************************************/
+/**************  The following is CSS styling for  *************/
+/**************       the cases/show page          *************/
+/***************************************************************/
+/***************************************************************/
+
+
+#case_heading{
+  background-image:url('http://newevolutiondesigns.com/images/freebies/texture-wallpaper-18.jpg');
+  margin: auto;
+}
+
+body {
+  background-image:url('http://newevolutiondesigns.com/images/freebies/texture-wallpaper-18.jpg');
+}
+
+.case_title {
+font-weight: bold;
+text-align: center;
+font-size: 30px;
+color: white;
+width: 92%;
+padding: 10px;
+}
+
+.case_summary {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  width: 92%;
+  display: block;
+  margin: auto;
+}
+
+.bothPeople {
+  margin: auto;
+}
+
+.person1 {
+  height: 525px;
+  color: white;
+  width: 46%;
+  float: left;
+  margin: auto 5px;
+  border: blue solid;
+}
+
+.person1 p {
+  text-align: center;
+}
+
+.person2 {
+  height: 525px;
+  color: white;
+  width: 46%;
+  float: left;
+  margin: auto 5px;
+  border: red solid;
+}
+
+.person2 p {
+  text-align: center;
+}
+
+.video-thumbnail {
+  margin: auto;
+}
+
+.argumentText1 {
+  height: 150px;
+  margin: 15px auto;
+  text-align: center
+}
+
+iframe {
+  margin: auto;
+  display: block;
+}
+
+.argumentText2 {
+  height: 150px;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.vote-plaintiff {
+  display: block;
+  margin: 5px;
+}
+
+.vote-defendant {
+  display: block;
+  margin: 5px;
+}
+
+.vote-plaintiff-button {
+  text-align: center;
+}
+
+.vote-defendant-button {
+  text-align: center;
+}
+
+.commentsBox {
+  float: clear;
+  width: 500px;
+  margin: auto;
+  display: block;
+  color: white;
+}
+
+.commentslist {
+  color: white;
+}
+

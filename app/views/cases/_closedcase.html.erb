@@ -4,6 +4,15 @@
 		PLAINTIFF: <%= @case.users[0].user_name %> had <%= Ballot.where(:role => "plaintiff", :case_id => @case.id).count %> votes
 		<br>
    	DEFENDANT:<%= @case.users[1].user_name %> had <%= Ballot.where(:role => "defendant", :case_id => @case.id).count %> votes
+
+   	<% if ((Ballot.where(:role => "plaintiff", :case_id => @case.id).count) > (Ballot.where(:role => "defendant", :case_id => @case.id).count))%>
+   		<p>PLAINTIFF WINS!</p>
+ 		<% elsif((Ballot.where(:role => "plaintiff", :case_id => @case.id).count) < (Ballot.where(:role => "defendant", :case_id => @case.id).count))%>
+ 			<p>DEFENDANT WINS!</p>
+ 		<% else %>
+   		<p>IT'S A TIE!</p>
+   	<% end %>
+
 	</div>
 
 	<h3>Case Details</h3>
