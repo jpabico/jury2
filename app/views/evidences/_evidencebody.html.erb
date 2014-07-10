@@ -1,8 +1,7 @@
-<div id='create_case_box'>
 
-  <span id='new_case_title'>Submit your story</span>
-  <div id="case_form_div">
-  <%= form_tag evidences_path do %>
+  <div id="new_evidence_form">
+    <span id="new_evidence_header">Submit your story</span>
+    <%= form_tag evidences_path do %>
 
   <!--  Not using photo URL for MVP
   label_tag "Photo URL" %>
@@ -20,8 +19,7 @@
       <div id="widget"></div>
       <div id="player"></div><br>
 
-      <%= label_tag "Video ID" %>
-      <%= text_field_tag :video_url %>
+      <%= hidden_field_tag :video_url %>
 
     <% else %>
       <div class="google-auth">
@@ -34,7 +32,7 @@
     <%= text_area_tag :argument %>
     <%= hidden_field_tag :case_id, params[:id] %>
     <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
-
+    <br><br>
     <%= submit_tag "Submit Argument" %>
   </end>
   <% end %>
