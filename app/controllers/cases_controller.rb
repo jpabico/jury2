@@ -1,4 +1,6 @@
 class CasesController < ApplicationController
+  layout "special", except: [:new,:create,:create_case_params,:create_plaintiff_params,:create_defendant_params]
+
   def new
     if session[:id]
       @target_user = User.find(session[:id])
