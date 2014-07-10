@@ -14,7 +14,7 @@
 </div>
 <!-- end -->
 <div id="case_details">C a s e &nbsp; D e t a i l s</div>
-
+<!-- start of both cases -->
 <div class="both_people">
 
 	<div class="person1">
@@ -60,17 +60,17 @@
       TOTAL BALLOTS: <span id = 'defendant_vote_count'><%= Ballot.where(:role => "defendant", :case_id => @case.id).count %></span>
     </div>
     <br/>
-
-
-
-
-
-
 <!-- for person 2 -->
-</div>
+  </div>
 <!-- for both people -->
 </div>
-  <div id="case_details">C o m m e n t s</div>
+
+
+
+
+
+
+<div id="case_details">C o m m e n t s</div>
 
 <div id="comment_section">
   <center>

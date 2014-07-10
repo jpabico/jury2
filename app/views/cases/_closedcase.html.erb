@@ -1,4 +1,5 @@
 <div class="cases_show_main_body">
+	<!-- start of heading -->
 	<div id="case_heading">
 		<h2>CASE DISMISSED!</h2>
 
@@ -13,8 +14,8 @@
  		<% else %>
    		<p>IT'S A TIE!</p>
    	<% end %>
-
 	</div>
+<!-- end -->
 
 
 
@@ -41,7 +42,7 @@
 
 
 	</div>
-
+<!-- end of person 1 -->
 	<div class="person2">
 
 		DEFENDANT:<%= @case.users[1].user_name %>
@@ -56,7 +57,10 @@
 		</div>
 	</div>
 </div>
+
+
 <div id="comment_section">
+<div class="commentsBox">
 
 	<div id = "commentslist">
 		<br>
@@ -68,6 +72,7 @@
 		  </p>
 		  <% end %>
 	</div>
+</div>
 </div>
 
 
