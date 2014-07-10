@@ -1,41 +1,69 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-/*body {
-  background-color:#fbfbfb;
+
+.google-auth {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-#auth_panel {
-  width:120px;
-  height:160px;
-  background-color: black;
-  float:right;
-}*/
+#whole_box {
+  display: inline;
+  height: 800px;
+}
+#create_process {
+  background-image:url('dots.png');
+}
 
+#whole_box {
+  display: inline;
+}
 
+#new_evidence_form {
+    width: 450px;
+    height: auto;
+    margin: 10px auto;
+    padding: 0 10px 0 10px;
+    position: relative;
+    color: #444;
+    background: #fff;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
 
+#new_evidence_form textarea {
+  height: 90px;
+  width: 326px;
+}
 
+#new_evidence_header {
+   display: block;
+    height: 30px;
+    line-height: 1.3;
+    width: 460px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    position: relative;
+    left: -16px;
+    top: 8px;
+    color: #cfcfcf;
+    text-shadow: 0 1px 1px #111;
+    border-top: 1px solid #363636;
+    border-bottom: 1px solid #202020;
+    background: #333;
+    background: linear-gradient(top, #383838 0%, #262626 100%);
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
 
 body {
   width: 100%;
   -webkit-box-shadow: 0px 2px 1px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 2px 1px 0px rgba(50, 50, 50, 0.75);
   box-shadow:         0px 2px 1px 0px rgba(50, 50, 50, 0.75);
-}
+  background-image:url('dots.png');
 
+}
 #header_top_main {
   /*border-bottom: 20px solid black;*/
-  margin-bottom: 16px;
   width: 100%;
   background-image:url('dots.png');
   height: 3.8em;
@@ -43,11 +71,11 @@ body {
 
 #body_middle_main {
   background-image:url('dots.png');
-  margin-top: -0.95em;
 }
 
 #footer_bottom_main {
   background-color: #E3E3E3;
+  float:bottom;
 }
 
 
@@ -84,7 +112,7 @@ body {
 }
 
 #slogan {
-font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
 }
 
@@ -133,7 +161,7 @@ font-family: 'Roboto Condensed', sans-serif;
   /*background-position: right 20px center;*/
   /*background-repeat:no-repeat;*/
   /*background-size: 80px 60px;*/
-background-image:url('wood.jpg');
+  background-image:url('wood.jpg');
 }
 
 #main_logo {
@@ -351,4 +379,175 @@ background-image:url('wood.jpg');
 #create_case_btn:active {
 
 }
+
+
+
+/* beginning of create a new case area */
+#box_for_logged_inners {
+}
+
+#create_case_box {
+  height: 250px;
+  width: 350px;
+  margin: 20px auto;
+  padding: 0 10px 0;
+  position: relative;
+  color: #444;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#new_case_title {
+  display: block;
+  height: 30px;
+  line-height: 1.3;
+  width: 360px;
+  margin: 0;
+  padding: 5px 10px;
+  position: relative;
+  left: -16px;
+  top: 8px;
+  color: #cfcfcf;
+  text-shadow: 0 1px 1px #111;
+  border-top: 1px solid #363636;
+  border-bottom: 1px solid #202020;
+  background: #333;
+  background: linear-gradient(top, #383838 0%, #262626 100%);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+#create_case_form {
+  display: inline;
+
+}
+
+#create_case_form input {
+  margin-top: 5px;
+  margin-bottom: 7px;
+}
+
+#case_form_div {
+  margin-top: 20px;
+  width: 145px;
+  /*margin: 20px auto 0 auto;*/
+}
 /* This button was generated using CSSButtonGenerator.com */
+
+
+/***************************************************************/
+/***************************************************************/
+/**************  The following is CSS styling for  *************/
+/**************       the cases/show page          *************/
+/***************************************************************/
+/***************************************************************/
+
+
+#case_heading{
+  background-image:url('http://newevolutiondesigns.com/images/freebies/texture-wallpaper-18.jpg');
+  margin: auto;
+}
+
+
+
+.case_title {
+font-weight: bold;
+text-align: center;
+font-size: 30px;
+color: white;
+width: 92%;
+padding: 10px;
+}
+
+.case_summary {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  width: 92%;
+  display: block;
+  margin: auto;
+}
+
+.bothPeople {
+  margin: auto;
+}
+
+.person1 {
+  height: 525px;
+  color: white;
+  width: 46%;
+  float: left;
+  margin: auto 5px;
+  border: blue solid;
+}
+
+.person1 p {
+  text-align: center;
+}
+
+.person2 {
+  height: 525px;
+  color: white;
+  width: 46%;
+  float: left;
+  margin: auto 5px;
+  border: red solid;
+}
+
+.person2 p {
+  text-align: center;
+}
+
+.video-thumbnail {
+  margin: auto;
+}
+
+.argumentText1 {
+  height: 150px;
+  margin: 15px auto;
+  text-align: center
+}
+
+iframe {
+  margin: auto;
+  display: block;
+}
+
+.argumentText2 {
+  height: 150px;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.vote-plaintiff {
+  display: block;
+  margin: 5px;
+}
+
+.vote-defendant {
+  display: block;
+  margin: 5px;
+}
+
+.vote-plaintiff-button {
+  text-align: center;
+}
+
+.vote-defendant-button {
+  text-align: center;
+}
+
+.commentsBox {
+  float: clear;
+  width: 500px;
+  margin: auto;
+  display: block;
+  color: white;
+}
+
+.commentslist {
+  color: white;
+}
+

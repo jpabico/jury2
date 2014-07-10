@@ -22,4 +22,5 @@ $(document).ready(function() {
     $('.dashboard-alerts img').on('click',function(event){
       $('.dashboard-alerts').hide(500);
     })
+
 });

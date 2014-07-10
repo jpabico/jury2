@@ -1,38 +1,40 @@
 
-<h1>Submit your story</h1>
-<%= form_tag evidences_path do %>
+  <div id="new_evidence_form">
+    <span id="new_evidence_header">Submit your story</span>
+    <%= form_tag evidences_path do %>
 
-<!--  Not using photo URL for MVP
-label_tag "Photo URL" %>
-text_field_tag :photo_url %> 
--->
-  <% if current_user %>
+  <!--  Not using photo URL for MVP
+  label_tag "Photo URL" %>
+  text_field_tag :photo_url %>
+  -->
+    <% if current_user %>
 
-    <div class="google-auth">
-      Signed in to Google as <strong><%= current_user.name %></strong>!<br>
-      <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
-    </div>
+      <div class="google-auth">
+        Signed in to Google as <strong><%= current_user.name %></strong>!<br>
+        <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
+      </div>
 
-    <div id="video-status">No video uploaded yet</p></div>
+      <div id="video-status">No video uploaded yet</p></div>
 
-    <div id="widget"></div>
-    <div id="player"></div><br>
+      <div id="widget"></div>
+      <div id="player"></div><br>
 
-    <%= label_tag "Video ID" %>
-    <%= text_field_tag :video_url %>
+      <%= hidden_field_tag :video_url %>
 
-  <% else %>
-    <div class="google-auth">
-      <%= link_to "Sign in to Google to upload your video", "/auth/google_oauth2", id: "sign_in" %>
-    </div>
+    <% else %>
+      <div class="google-auth">
+        <%= link_to "Sign in to Google to upload your video", "/auth/google_oauth2", id: "sign_in" %>
+      </div>
 
+    <% end %>
+
+    <%= label_tag "Argument" %>
+    <%= text_area_tag :argument %>
+    <%= hidden_field_tag :case_id, params[:id] %>
+    <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
+    <br><br>
+    <%= submit_tag "Submit Argument" %>
+  </end>
   <% end %>
 
-  <%= label_tag "Argument" %>
-  <%= text_area_tag :argument %>
-  
-  <%= hidden_field_tag :case_id, params[:id] %>
-  <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>  
-
-  <%= submit_tag "Submit Argument" %>
-<% end %>
+</div>
