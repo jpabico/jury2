@@ -40,6 +40,8 @@ group :development, :test do
   gem 'rspec-rails', '=2.14'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'metric_fu'
+  gem 'simplecov'
 end
 
 group :test do
