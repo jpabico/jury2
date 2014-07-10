@@ -6,22 +6,22 @@ function bindEvents(){
 
   $('.vote-defendant').on("ajax:success", addDefendant)
   $('.vote-plaintiff').on("ajax:success",addPlaintiff)
-  $('.commentsBox').on("ajax:success", addComment)
-  $('.commentsBox').on('ajax:success', '#like', updateVote)
-  $('.commentsBox').on('ajax:success', '#dislike', updateVote)
+  $(document).on("ajax:success", addComment)
+  $(document).on('ajax:success', '#like', updateVote)
+  $(document).on('ajax:success', '#dislike', updateVote)
   // $(document).on('ajax:error', '#dislike', wtf)
 }
     function addComment(e, data, status, xhr){
-      $('.commentsBox').append(data);
+      $('#commentslist').append(data);
       $('#comment_body').val('');
     };
 
     function addPlaintiff(e, data, status, xhr){
-      $("#plaintiff_vote_count").text(data);
+      $("#plaintiff_vote_count").text(data.myresult);
     };
 
     function addDefendant(e, data, status, xhr){
-      $("#defendant_vote_count").text(data);
+      $("#defendant_vote_count").text(data.myresult);
     };
 
     function updateVote(e, data, status, xhr){

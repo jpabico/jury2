@@ -9,7 +9,7 @@ class BallotsController < ApplicationController
     elsif params[:role] == "plaintiff"
       @myresult =  Ballot.where(:role => "plaintiff", :case_id => params[:case_id]).count
     end
-    render json: @myresult
+    render json: {myresult: @myresult}
 
   end
 end
