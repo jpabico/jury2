@@ -18,21 +18,21 @@ class CasesController < ApplicationController
 
     # Countdown timer feature
     if @case.active_end == nil
-      remaining_seconds = 0
+      @starting_seconds = 0
     else
-      remaining_seconds = @case.active_end - Time.now
+      @starting_seconds = @case.active_end - Time.now
     end
 
-    if remaining_seconds <= 0
+    if @starting_seconds <= 0
       @remaining_days = 0
       @remaining_hours = 0
       @remaining_minutes = 0
       @remaining_seconds = 0
     else
-      @remaining_days = remaining_seconds.divmod(84000)[0]
-      @remaining_hours = remaining_seconds.divmod(84000)[1].divmod(3600)[0]
-      @remaining_minutes = remaining_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[0]
-      @remaining_seconds = remaining_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[1].to_int
+      @remaining_days = @starting_seconds.divmod(84000)[0]
+      @remaining_hours = @starting_seconds.divmod(84000)[1].divmod(3600)[0]
+      @remaining_minutes = @starting_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[0]
+      @remaining_seconds = @starting_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[1].to_int
     end
     
   end

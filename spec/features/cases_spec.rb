@@ -26,27 +26,19 @@ feature 'Dashboard Index Page' do
   # Basic Display Tests
   # ================================
 
-  scenario 'Displays active cases on dashboard_path' do
-    visit dashboard_path
-    expect(page).to have_content 'The Kid is Not My Son'
-  end
-  scenario 'Displays active cases on root' do
-    visit root_path
-    expect(page).to have_content 'The Kid is Not My Son'
+  scenario 'Displays plaintiff case argument' do
+    visit case_path(1)
+    expect(page).to have_content "Look, there\'s just no doubt that MJ is truly awesome. Vote for me!"
   end
 
-  scenario 'Displays closed cases' do
-    visit root_path
-    expect(page).to have_content 'Dogs are the best companions'
-  end
+  scenario 'Displays defendant case argument' do
+    visit case_path(1)
+    expect(page).to have_content "MJ is not awesome.  But he was kinda good in Thriller."
+  end  
 
-  scenario 'Displays plaintiff correctly' do
-    visit root_path
-    expect(page).to have_content 'akimeister'
-  end
+  # scenario 'Displays countdown timer' do
+  #   visit case_path(1)
+  #   expect(@starting_seconds).to eq(@case.active_end - Time.now)
+  # end  
 
-  scenario 'Displays defendant correctly' do
-    visit root_path
-    expect(page).to have_content 'donkeykang'
-  end
 end
