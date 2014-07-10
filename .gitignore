@@ -8,3 +8,6 @@
 
 # various artifacts
 /config/database.yml
+
+# coverage
+/coverage
