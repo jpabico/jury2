@@ -4,12 +4,36 @@ class CasesController < ApplicationController
     if User.find_by_user_name(params["defendant_user_name"]) == nil
       redirect_to new_case_path
     else
-    new_case = Case.create(title: params[:title], summary: params[:summary])
-    @case_user_plaintiff = CasesUser.create(case_id: new_case.id, user_id: session[:id], party: "plaintiff")
-    CasesUser.create(case_id: new_case.id, user_id: User.find_by_user_name(params[:defendant_user_name]).id, party: "defendant")
+    create_case_params
+    @new_case = Case.create(@case_params)
+    create_plaintiff_params
+    create_defendant_params
+    @case_user_plaintiff = CasesUser.create(@plaintiff_params)
+    CasesUser.create(@defendant_params)
     redirect_to new_evidence_path(:case_user_plaintiff => @case_user_plaintiff)
     end
   end
+
+
+  def create_case_params
+    @case_params = {title: params[:title], summary: params[:summary]}
+  end
+
+  def create_plaintiff_params
+    @plaintiff_params = {case_id: @new_case.id, user_id: session[:id], party: "plaintiff"}
+  end
+
+  def create_defendant_params
+    @defendant_params = {case_id: @new_case.id, user_id: User.find_by_user_name(params[:defendant_user_name]).id, party: "defendant"}
+  end
+
+
+
+
+
+
+
+
 
   def show
 
@@ -34,7 +58,7 @@ class CasesController < ApplicationController
       @remaining_minutes = @starting_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[0]
       @remaining_seconds = @starting_seconds.divmod(84000)[1].divmod(3600)[1].divmod(60)[1].to_int
     end
-    
+
   end
 
 end
