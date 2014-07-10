@@ -22,19 +22,14 @@
   </div>
 
   <!-- !!!!!!!!!!!!!!!! -->
-  <% if session[:id] %>
 
-    <div id="create_process">
-      <%= yield %>
-    </div>
 
-  <% end %>
+
 
 
   <div id="body_middle_main">
-    <%= render "/pages/dashboard.html.erb" %>
+    <%= yield %>
   </div>
-
   <!-- this is a footer -->
   <div id="footer_bottom_main">
     <%= render "/pages/ijuryfooter" %>

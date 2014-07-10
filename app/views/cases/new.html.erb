@@ -1,16 +1,19 @@
+<div id="active_cases_header">
+    <span class="cases_ribbon">&nbsp; D a s h b o a r d &nbsp;&nbsp;&nbsp; f o r &nbsp;&nbsp;&nbsp; "<%= User.find(session[:id]).user_name %>"</span>
+</div>
 <div id="crazy">
 <div id="create_case_box">
   <span id="new_case_title">Create a New Case</span>
   <div id="case_form_div">
   <%= form_tag cases_path,:id => 'create_case_form' do %>
-    <%= label_tag "Title" %>
-    <%= text_field_tag :title %>
-    <%= label_tag "Summary" %>
-    <%= text_field_tag :summary %>
-    <%= label_tag "Defendant" %>
+    <p>Title</p>
+    <%= text_field_tag :title , nil, :class => 'input_box'%>
+    <p>Summary</p>
+    <%= text_area_tag :summary %>
+    <p>Defendant</p>
     <%= text_field_tag :defendant_user_name %>
 
-    <%= submit_tag "Create Case" %>
+    <%= submit_tag "Create Case"%>
   <% end %>
   <div>
 </div>

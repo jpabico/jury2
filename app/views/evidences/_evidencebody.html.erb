@@ -1,4 +1,6 @@
-
+<div id="active_cases_header">
+    <span class="cases_ribbon">&nbsp; D a s h b o a r d &nbsp;&nbsp;&nbsp; f o r &nbsp;&nbsp;&nbsp; "<%= User.find(session[:id]).user_name %>"</span>
+</div>
   <div id="new_evidence_form">
     <span id="new_evidence_header">Submit your story</span>
     <%= form_tag evidences_path do %>
@@ -8,7 +10,7 @@
   text_field_tag :photo_url %>
   -->
     <% if current_user %>
-
+    <center>
       <div class="google-auth">
         Signed in to Google as <strong><%= current_user.name %></strong>!<br>
         <%= link_to "Sign out", gsignout_path, id: "sign_out" %><br>
@@ -28,7 +30,7 @@
 
     <% end %>
 
-    <%= label_tag "Argument" %>
+    <p>Argument</p>
     <%= text_area_tag :argument %>
     <%= hidden_field_tag :case_id, params[:id] %>
     <%= hidden_field_tag :case_user_plaintiff, params["case_user_plaintiff"] %>
@@ -36,5 +38,5 @@
     <%= submit_tag "Submit Argument" %>
   </end>
   <% end %>
-
+</center>
 </div>
