@@ -1,17 +1,19 @@
+<!-- case heading -->
 <div id="case_heading">
-  <h3><div class="case_title"> Case: <%= @case.title %></div></h3>
+  <div class="case_title"> Case: <%= @case.title %></div>
 
   <p><div class="case_summary"><%= @case.summary %></div></p>
-</div>
 
-<div class="countdown-timer">
-	<h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small>
-		<%= @remaining_hours %><small>h</small>
-		<%= @remaining_minutes %><small>m</small>
-		<%= @remaining_seconds %><small>s</small>
-	</h4>
+  <div class="countdown-timer">
+    <h4>Remaining Time to Vote: <%= @remaining_days %><small>d</small>
+      <%= @remaining_hours %><small>h</small>
+      <%= @remaining_minutes %><small>m</small>
+      <%= @remaining_seconds %><small>s</small>
+    </h4>
+  </div>
 </div>
-  <div id="case_details">C a s e &nbsp; D e t a i l s</div>
+<!-- end -->
+<div id="case_details">C a s e &nbsp; D e t a i l s</div>
 
 <div class="both_people">
 

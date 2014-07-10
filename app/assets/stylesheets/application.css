@@ -454,7 +454,19 @@ body {
 #case_heading{
   margin: auto;
   text-align: center;
+  height: auto;
+  width: 490px;
+  margin: 20px auto;
+  padding: 0 10px 0;
+  position: relative;
+  color: #444;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+
+
 
 .countdown-timer{
   margin: 0 auto;
@@ -468,6 +480,24 @@ font-size: 30px;
 color: black;
 width: 92%;
 padding: 10px;
+
+display: block;
+    height: 30px;
+    line-height: 1.3;
+    width: 510px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    position: relative;
+    left: -16px;
+    top: 8px;
+    color: #cfcfcf;
+    text-shadow: 0 1px 1px #111;
+    border-top: 1px solid #363636;
+    border-bottom: 1px solid #202020;
+    background: #333;
+    background: linear-gradient(top, #383838 0%, #262626 100%);
+    border-radius: 2px 2px 0 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .case_summary {
