@@ -19,9 +19,7 @@ FactoryGirl.define do
 
   factory :evidence do
     argument "This is a test argument that is better than all the rest"
-    mediatype "written"
-    party "user_id"
-    users_cases_id 1
+    cases_user_id 1
   end
 
   factory :user do
@@ -30,13 +28,13 @@ FactoryGirl.define do
     password_hash "test"
   end
 
-  factory :users_case do
+  # factory :users_case do
 
-  end
+  # end
 
-  factory :vote do
+  # factory :vote do
 
-  end
+  # end
 
 end
 
