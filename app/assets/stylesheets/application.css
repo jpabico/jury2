@@ -1,28 +1,9 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-/*body {
-  background-color:#fbfbfb;
+
+
+#create_process {
+  background-image:url('dots.png');
+  height: 20em;
 }
-
-#auth_panel {
-  width:120px;
-  height:160px;
-  background-color: black;
-  float:right;
-}*/
-
-
 
 
 
@@ -31,11 +12,11 @@ body {
   -webkit-box-shadow: 0px 2px 1px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 2px 1px 0px rgba(50, 50, 50, 0.75);
   box-shadow:         0px 2px 1px 0px rgba(50, 50, 50, 0.75);
-}
+  background-image:url('dots.png');
 
+}
 #header_top_main {
   /*border-bottom: 20px solid black;*/
-  margin-bottom: 16px;
   width: 100%;
   background-image:url('dots.png');
   height: 3.8em;
@@ -43,11 +24,11 @@ body {
 
 #body_middle_main {
   background-image:url('dots.png');
-  margin-top: -0.95em;
 }
 
 #footer_bottom_main {
   background-color: #E3E3E3;
+  float:bottom;
 }
 
 
@@ -84,7 +65,7 @@ body {
 }
 
 #slogan {
-font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
 }
 
@@ -133,7 +114,7 @@ font-family: 'Roboto Condensed', sans-serif;
   /*background-position: right 20px center;*/
   /*background-repeat:no-repeat;*/
   /*background-size: 80px 60px;*/
-background-image:url('wood.jpg');
+  background-image:url('wood.jpg');
 }
 
 #main_logo {
@@ -356,12 +337,12 @@ background-image:url('wood.jpg');
 
 /* beginning of create a new case area */
 #box_for_logged_inners {
-  height:18em;
 }
+
 #create_case_box {
   height: 250px;
   width: 350px;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 0 10px 0;
   position: relative;
   color: #444;
@@ -406,4 +387,3 @@ background-image:url('wood.jpg');
   width: 145px;
   /*margin: 20px auto 0 auto;*/
 }
-/* end of new case area */

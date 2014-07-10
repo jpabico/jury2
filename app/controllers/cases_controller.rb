@@ -1,9 +1,15 @@
 class CasesController < ApplicationController
   def new
-    respond_to do |format|
-      format.html
-      format.js
+    if session[:id]
+      @target_user = User.find(session[:id])
+      @my_cases = User.find(session[:id]).cases.order('status').order('created_at')
+
+      @my_invites = User.find(session[:id]).cases.where(status: "pending")
+
     end
+      @active_cases = Case.where(status: "active")
+      @closed_cases = Case.where(status: "closed")
+
   end
 
   def create
@@ -18,8 +24,17 @@ class CasesController < ApplicationController
   end
 
   def show
-    @case = Case.find(params[:id])
-    session[:case_id] = params[:id]
+    if session[:id]
+      @target_user = User.find(session[:id])
+      @my_cases = User.find(session[:id]).cases.order('status').order('created_at')
+
+      @my_invites = User.find(session[:id]).cases.where(status: "pending")
+
+    end
+      @active_cases = Case.where(status: "active")
+      @closed_cases = Case.where(status: "closed")
+      @case = Case.find(params[:id])
+      session[:case_id] = params[:id]
 
   end
 

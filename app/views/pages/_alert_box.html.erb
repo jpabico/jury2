@@ -1,0 +1,30 @@
+<div id="dash_board_frame">
+    <br>
+    <div class="dashboard-alerts">
+      <img src="http://berksdigital.com/printers/frontend/view/image/close_icon_small.png">
+      <br>
+      <span id="alert_header">Alerts</span>
+      <ul id="alert_list">
+        <% if @my_invites != nil %>
+         <% invite_count = 0 %>
+          <% @my_invites.each do |my_invite| %>
+            <% if my_invite.users[0].id != session[:id] %>
+              <li><%= my_invite.users[0].user_name %> has sent you a <a href="/cases/<%= my_invite.id %>">challenge!</a></li>
+              <% invite_count += 1 %>
+            <% end %>
+          <% end %>
+        <% else %>
+
+          <li><%= "No Alerts at the moment.  All clear!" %></li>
+
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="cases_create">
+    <br>
+    <%= link_to "Create a new case!", new_case_path, :id => "create_case_btn" %>
+    <br>
+  </div>
+</div>

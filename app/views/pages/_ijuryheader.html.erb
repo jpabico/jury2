@@ -1,0 +1,27 @@
+<div id="navigation">
+  <div id="header_left">
+    <div id="logo_img">
+      <%= link_to image_tag "small_logo.png", {height: 45, action: 'root_url', alt: "iJury"} %>
+    </div>
+    <div id="slogan_contain">
+      <span id="slogan">Settle it at iJury...</span>
+    </div>
+  </div>
+  <div id="header_right">
+    <% if session[:id] %>
+      <span id="welcome_msg">Welcome <%= User.find(session[:id]).user_name %>!</span>
+      <%= button_to "log out", session_path(session[:id]), method: :delete, redirect_to: "/" %>
+    <% else %>
+      <div id="sign_in">
+        <%= render :partial => '/sessions/sign_in', :locals => {:user => @user} %>
+      </div>
+      <div id="sign_up_trigger">
+        <a href="" id="su_trigger">New User? Sign Up</a>
+      </div>
+    <% end %>
+
+      <div id="sign_up_box">
+        <%= render :partial => '/users/sign_up', :locals => {:user => @user} %>
+      </div>
+    </div>
+</div>
