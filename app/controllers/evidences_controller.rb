@@ -38,7 +38,7 @@ class EvidencesController < ApplicationController
       })
 
       kase = Case.find(params[:case_id])
-      kase.update_attributes!(status: "active", active_start: Time.now)
+      kase.update_attributes!(status: "active", active_start: Time.now, active_end: Time.now + 24.hours)
 
       redirect_to dashboard_path
 
