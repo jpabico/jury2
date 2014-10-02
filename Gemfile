@@ -34,7 +34,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby'
 
 gem 'pry'
-gem 'debugger'
+gem 'byebug'
 
 group :development, :test do
   gem 'rspec-rails', '=2.14'
