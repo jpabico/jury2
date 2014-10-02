@@ -8,7 +8,8 @@
   height: 800px;
 }
 #create_process {
-  background-image:url('dots.png');
+  /*background-image:url('dots.png');*/
+  background-color:antiquewhite;
 }
 
 #whole_box {
@@ -58,23 +59,33 @@ body {
   -webkit-box-shadow: 0px 2px 1px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    0px 2px 1px 0px rgba(50, 50, 50, 0.75);
   box-shadow:         0px 2px 1px 0px rgba(50, 50, 50, 0.75);
-  background-image:url('dots.png');
-
+/*  background-image:url('dots.png');
+*/
+  background-color:antiquewhite;
 }
 #header_top_main {
   /*border-bottom: 20px solid black;*/
   width: 100%;
-  background-image:url('dots.png');
-  height: 3.8em;
+/*  background-image:url('dots.png');
+*/  height: 3.8em;
+background-color:antiquewhite;
 }
 
 #body_middle_main {
-  background-image:url('dots.png');
+/*  background-image:url('dots.png');
+*/
+background-color:antiquewhite;
 }
 
 #footer_bottom_main {
-  background-color: #E3E3E3;
+  background-color: #6B4423;
   clear:both;
+  border-radius: 10px;
+}
+
+#footer_bottom_main p {
+  margin: 5px 5px;
+  color: antiquewhite;
 }
 
 
@@ -97,6 +108,7 @@ body {
 
 #header_right {
   float:right;
+  margin-right: 18px;
 }
 
 #sign_in {
@@ -171,10 +183,11 @@ body {
 
 #active_cases_header {
   background-color: black;
+  border-radius: 10px;
 }
 
 .cases_ribbon {
-  color:white;
+  color:antiquewhite;
   font-size: 20px;
   font-weight: lighter;
   font-family: 'Lato', sans-serif;
@@ -183,8 +196,10 @@ body {
 .cases_count_ribbon {
   position: relative;
   font-size: 13px;
-  background-color: red;
-  color: white;
+  background-color: gold;
+  color: brown;
+  font-style: italic;
+  font-weight: bold;
   -webkit-box-shadow: 0px 2px 4px #888;
   -moz-box-shadow: 0px 2px 4px #888;
   box-shadow: 0px 2px 4px #888;
@@ -208,7 +223,8 @@ body {
 
 .cases_count_ribbon:before
 {
-  background-image:url('dots.png');
+  /*background-image:url('dots.png');*/
+  background-color:yellow;
   content: ' ';
   position: absolute;
   width: 20px;
@@ -237,25 +253,31 @@ body {
 .case_list_item {
   border:1px solid #666666;
   border-radius: 10px;
-
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .case_list_item:nth-child(odd) {
-  background-color: #D09B9E;
+  background-color: #654321;
 }
 .case_list_item:nth-child(even) {
-  background-color: #FFF4E7;
+  background-color: #6B4423;
 }
 
 .case_title_list {
   font-family: 'Arvo', serif;
   font-size: 16px;
-  color:black;
+  color:antiquewhite;
+  margin-left: 12px;
+  padding-top: 2px;
 }
 
 .case_names_list {
   font-family: 'PT Sans', sans-serif;
   font-size: 13px;
+  color:antiquewhite;
+  margin-left: 20px;
+  padding-bottom: 2px;
 }
 
 .case_status_list {
@@ -265,7 +287,7 @@ body {
 
 .case_list_item a {
   text-decoration: none;
-  text-shadow: 2px 2px 0px #E0E0E0;
+  /*text-shadow: 2px 2px 0px #E0E0E0;*/
 }
 
 .case_list_item a:visited {
@@ -274,7 +296,7 @@ body {
 }
 
 .case_title_list:hover {
-  text-shadow: 2px 2px 0px red;
+  /*text-shadow: 2px 2px 0px red;*/
 
 }
 
@@ -611,4 +633,10 @@ p {
   font-weight: lighter;
   font-family: 'Lato', sans-serif;
   clear:both;
+}
+
+.body {
+  margin: 0 auto;
+  width: 80%;
+  clear: both;
 }
